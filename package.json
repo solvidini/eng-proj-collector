@@ -13,6 +13,9 @@
     "nodemon": "^2.0.4"
   },
   "dependencies": {
-    "mongoose": "^5.9.15"
+    "cheerio": "^1.0.0-rc.3",
+    "mongoose": "^5.9.15",
+    "node-fetch": "^2.6.0",
+    "request": "^2.88.2"
   }
 }
