@@ -1,5 +1,3 @@
-const request = require('request');
-const cheerio = require('cheerio');
 const download = require('node-image-downloader');
 const puppeteer = require('puppeteer');
 
@@ -9,7 +7,7 @@ const webData = [];
 (async () => {
   try {
     let page;
-    const browser = await puppeteer.launch({ headless: false });
+    const browser = await puppeteer.launch();
 
     page = await browser.newPage();
     await page.goto(scrapeLink, { waitUntil: 'networkidle2' });
@@ -23,7 +21,7 @@ const webData = [];
             document.querySelector('body > footer').offsetHeight
         );
       });
-      await page.waitFor(5000);
+      await page.waitFor(2000);
     }
 
     let pageData = await page.evaluate(() => {
@@ -36,11 +34,23 @@ const webData = [];
 
       nodeList.forEach((node) => {
         const title = node.querySelector('.tile__text').textContent;
-        data.push({ title });
+        let uri = node.querySelector('.img').getAttribute('style');
+        uri = uri.substring(23, uri.length - 3);
+        data.push({ title, uri });
       });
 
       return data;
     });
+
+    download({
+      imgs: pageData,
+      dest: './images',
+    })
+      .then((info) => {
+        console.log('Download complete');
+        // process.exit(1);
+      })
+      .catch((err) => console.log(err));
 
     console.log(pageData);
 
@@ -48,20 +58,4 @@ const webData = [];
   } catch (err) {
     console.log(err.message);
   }
-
-  // const data = page.$('tile').then((element, next) => {
-  //   console.log(element, next);
-  // });
 })();
-
-// request(scrapeLink, (error, response, html) => {
-//   if (!error && response.statusCode == 200) {
-//     const $ = cheerio.load(html);
-
-//     const articleBody = $('.tile');
-
-//     console.log(articleBody.html());
-//   } else {
-//     console.log(error);
-//   }
-// });
