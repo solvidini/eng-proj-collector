@@ -1,46 +1,67 @@
-const fetch = require('node-fetch');
+const request = require('request');
 const cheerio = require('cheerio');
+const download = require('node-image-downloader');
+const puppeteer = require('puppeteer');
 
-const scrapeLink = 'https://en.wikipedia.org/wiki/Main_Page';
+const scrapeLink = 'https://mera.eu/lampy/lampy-wiszace/';
+const webData = [];
 
-fetch(scrapeLink)
-  .then((response) => {
-    if (response.status !== 200) {
-      console.log(response.status);
+(async () => {
+  try {
+    let page;
+    const browser = await puppeteer.launch({ headless: false });
+
+    page = await browser.newPage();
+    await page.goto(scrapeLink, { waitUntil: 'networkidle2' });
+
+    for (let j = 0; j < 5; j++) {
+      await page.evaluate(() => {
+        window.scrollTo(
+          0,
+          document.querySelector('body > div.page > div.producer')
+            .offsetTop -
+            document.querySelector('body > footer').offsetHeight
+        );
+      });
+      await page.waitFor(5000);
     }
-    return response.text();
-  })
-  .then((html) => {
-    const $ = cheerio.load(html);
-    const webData = [];
 
-    $('#sister-projects-list')
-      .children()
-      .each((i, el) => {
-        const imgTitle = $(el).find('a').attr('title');
-        const link = $(el).find('a').attr('href');
-        const title = $(el).children().next().children().text();
-        const description = $(el)
-          .children()
-          .next()
-          .text()
-          .split(' ')
-          .slice(2)
-          .join(' ');
+    let pageData = await page.evaluate(() => {
+      window.scrollTo(0, document.body.scrollHeight);
+      let data = [];
 
-        webData.push({
-          scrapeLink,
-          imgTitle,
-          link,
-          title,
-          description,
-        });
+      const nodeList = document.querySelector(
+        'body > div.page > div.tile.tile--bg-dark > div.tile__row.tile__row--tiles.floatfix'
+      ).childNodes;
+
+      nodeList.forEach((node) => {
+        const title = node.querySelector('.tile__text').textContent;
+        data.push({ title });
       });
 
-    console.log(webData);
+      return data;
+    });
 
-    //.text().replace(/\s\s+/g, '');
-    //.text().replace(/,/, '');
-    // console.log(article);
-  })
-  .catch((err) => console.log(err));
+    console.log(pageData);
+
+    await browser.close();
+  } catch (err) {
+    console.log(err.message);
+  }
+
+  // const data = page.$('tile').then((element, next) => {
+  //   console.log(element, next);
+  // });
+})();
+
+// request(scrapeLink, (error, response, html) => {
+//   if (!error && response.statusCode == 200) {
+//     const $ = cheerio.load(html);
+
+//     const articleBody = $('.tile');
+
+//     console.log(articleBody.html());
+//   } else {
+//     console.log(error);
+//   }
+// });
