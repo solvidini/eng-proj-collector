@@ -1,8 +1,9 @@
 const download = require('node-image-downloader');
 const puppeteer = require('puppeteer');
+const uuid = require('uuid');
 
 const scrapeLink = 'https://mera.eu/lampy/lampy-wiszace/';
-const webData = [];
+const scrollDownQuantity = 1;
 
 (async () => {
   try {
@@ -12,7 +13,7 @@ const webData = [];
     page = await browser.newPage();
     await page.goto(scrapeLink, { waitUntil: 'networkidle2' });
 
-    for (let j = 0; j < 5; j++) {
+    for (let j = 0; j < scrollDownQuantity; j++) {
       await page.evaluate(() => {
         window.scrollTo(
           0,
@@ -42,15 +43,20 @@ const webData = [];
       return data;
     });
 
+    pageData = pageData.map((element) => {
+      return { ...element, filename: 'mera-' + uuid.v4() };
+    });
+
     download({
       imgs: pageData,
       dest: './images',
     })
       .then((info) => {
-        console.log('Download complete');
-        // process.exit(1);
+        console.log('Download complete', info);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+      });
 
     console.log(pageData);
 
