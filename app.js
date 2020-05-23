@@ -53,12 +53,15 @@ const scrollDownQuantity = 1;
     })
       .then((info) => {
         console.log('Download complete', info);
+        info.forEach((element, index) => {
+          delete pageData[index].filename
+          pageData[index].path = element.path;
+        });
+        console.log(pageData);
       })
       .catch((err) => {
         console.log(err);
       });
-
-    console.log(pageData);
 
     await browser.close();
   } catch (err) {
