@@ -1,70 +1,40 @@
-const download = require('node-image-downloader');
-const puppeteer = require('puppeteer');
-const uuid = require('uuid');
+const path = require('path');
 
-const scrapeLink = 'https://mera.eu/lampy/lampy-wiszace/';
-const scrollDownQuantity = 1;
+const schedule = require('node-schedule');
+const express = require('express');
+const mongoose = require('mongoose');
 
-(async () => {
-  try {
-    let page;
-    const browser = await puppeteer.launch();
+const meraLampsScraper = require('./targets/mera-lamps');
 
-    page = await browser.newPage();
-    await page.goto(scrapeLink, { waitUntil: 'networkidle2' });
+const app = express();
 
-    for (let j = 0; j < scrollDownQuantity; j++) {
-      await page.evaluate(() => {
-        window.scrollTo(
-          0,
-          document.querySelector('body > div.page > div.producer')
-            .offsetTop -
-            document.querySelector('body > footer').offsetHeight
-        );
-      });
-      await page.waitFor(2000);
+//static images download
+app.use('/images', express.static(path.join(__dirname, 'images')));
+
+//scrapers
+const rule = '0 0 * * * *';
+// rule.second = 10;
+
+// app.use((req, res, next) => {
+//   console.log('inside!');
+// });
+
+// schedule.scheduleJob(rule, () => {
+// meraLampsScraper();
+// });
+
+mongoose
+  .connect(
+    'mongodb+srv://cyber-admin:1423cezqS7@cluster0-liqat.mongodb.net/database?retryWrites=true&w=majority',
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
     }
-
-    let pageData = await page.evaluate(() => {
-      window.scrollTo(0, document.body.scrollHeight);
-      let data = [];
-
-      const nodeList = document.querySelector(
-        'body > div.page > div.tile.tile--bg-dark > div.tile__row.tile__row--tiles.floatfix'
-      ).childNodes;
-
-      nodeList.forEach((node) => {
-        const title = node.querySelector('.tile__text').textContent;
-        let uri = node.querySelector('.img').getAttribute('style');
-        uri = uri.substring(23, uri.length - 3);
-        data.push({ title, uri });
-      });
-
-      return data;
-    });
-
-    pageData = pageData.map((element) => {
-      return { ...element, filename: 'mera-' + uuid.v4() };
-    });
-
-    download({
-      imgs: pageData,
-      dest: './images',
-    })
-      .then((info) => {
-        console.log('Download complete', info);
-        info.forEach((element, index) => {
-          delete pageData[index].filename
-          pageData[index].path = element.path;
-        });
-        console.log(pageData);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-
-    await browser.close();
-  } catch (err) {
-    console.log(err.message);
-  }
-})();
+  )
+  .then((result) => {
+    console.log('Connected to database.');
+    app.listen(process.env.PORT || 8101);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
