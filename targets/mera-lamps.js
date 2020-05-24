@@ -4,11 +4,10 @@ const uuid = require('uuid');
 
 const Product = require('../models/product');
 
-const scrapeLink = 'https://mera.eu/lampy/lampy-wiszace/';
+const scrapeLink = 'https://uumera.eu/lampy/lampy-wiszace/';
 const scrollDownQuantity = 2;
 
 const scraper = async () => {
-  console.log('Scrapping started: Mera Lamps');
   try {
     let page;
     const browser = await puppeteer.launch();
@@ -87,7 +86,7 @@ const scraper = async () => {
 
     await browser.close();
   } catch (err) {
-    console.log(err.message);
+    console.log('Mera Scrapping Failed:', err.message);
   }
 };
 

@@ -4,24 +4,13 @@ const schedule = require('node-schedule');
 const express = require('express');
 const mongoose = require('mongoose');
 
+const utils = require('./utils/utils');
 const meraLampsScraper = require('./targets/mera-lamps');
 
 const app = express();
 
 //static images download
 app.use('/images', express.static(path.join(__dirname, 'images')));
-
-//scrapers
-const rule = '0 0 * * * *';
-// rule.second = 10;
-
-// app.use((req, res, next) => {
-//   console.log('inside!');
-// });
-
-// schedule.scheduleJob(rule, () => {
-// meraLampsScraper();
-// });
 
 mongoose
   .connect(
@@ -33,6 +22,19 @@ mongoose
   )
   .then((result) => {
     console.log('Connected to database.');
+
+    //scrapers
+    const rule = '0 * * * * *';
+    // const rule = '0 0 * * * *';
+
+    // app.use((req, res, next) => {
+    //   console.log('inside!');
+    // });
+    schedule.scheduleJob(rule, () => {
+      console.log('every minute');
+      // meraLampsScraper();
+    });
+
     app.listen(process.env.PORT || 8101);
   })
   .catch((err) => {
