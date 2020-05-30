@@ -1,10 +1,9 @@
-const download = require('node-image-downloader');
 const puppeteer = require('puppeteer');
 const uuid = require('uuid');
 
-const Product = require('../models/product');
+const uploadProducts = require('../utils/uploadProducts');
 
-const scrapeLink = 'https://uumera.eu/lampy/lampy-wiszace/';
+const scrapeLink = 'https://mera.eu/lampy/lampy-wiszace/';
 const scrollDownQuantity = 2;
 
 const scraper = async () => {
@@ -27,25 +26,26 @@ const scraper = async () => {
       await page.waitFor(2000);
     }
 
-    let pageData = await page.evaluate(() => {
-      window.scrollTo(0, document.body.scrollHeight);
-      let data = [];
+    let pageData =
+      (await page.evaluate(() => {
+        window.scrollTo(0, document.body.scrollHeight);
+        let data = [];
 
-      const nodeList = document.querySelector(
-        'body > div.page > div.tile.tile--bg-dark > div.tile__row.tile__row--tiles.floatfix'
-      ).childNodes;
+        const nodeList = document.querySelector(
+          'body > div.page > div.tile.tile--bg-dark > div.tile__row.tile__row--tiles.floatfix'
+        ).childNodes;
 
-      nodeList.forEach((node) => {
-        const company = 'mera';
-        const category = 'lampa';
-        const title = node.querySelector('.tile__text').textContent;
-        let uri = node.querySelector('.img').getAttribute('style');
-        uri = uri.substring(23, uri.length - 3);
-        data.push({ title, uri, company, category });
-      });
+        nodeList.forEach((node) => {
+          const company = 'mera';
+          const category = 'lampa';
+          const title = node.querySelector('.tile__text').textContent;
+          let uri = node.querySelector('.img').getAttribute('style');
+          uri = uri.substring(23, uri.length - 3);
+          data.push({ title, uri, company, category });
+        });
 
-      return data;
-    });
+        return data;
+      })) || [];
 
     pageData = pageData.map((element) => {
       return {
@@ -55,34 +55,7 @@ const scraper = async () => {
       };
     });
 
-    const info = await download({
-      imgs: pageData,
-      dest: './images',
-    });
-
-    info.forEach((element, index) => {
-      delete pageData[index].filename;
-      pageData[index].path = element.path;
-    });
-
-    console.log('Download complete', pageData);
-
-    pageData.forEach(async (item) => {
-      const product = new Product({
-        title: item.title,
-        path: item.path,
-        company: item.company,
-        uri: item.uri,
-        reference: item.reference,
-        category: item.category,
-      });
-      try {
-        await product.save();
-        console.log('Product saved to database!');
-      } catch (err) {
-        throw err;
-      }
-    });
+    await uploadProducts(pageData);
 
     await browser.close();
   } catch (err) {

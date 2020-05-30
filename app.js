@@ -24,16 +24,16 @@ mongoose
     console.log('Connected to database.');
 
     //scrapers
-    const rule = '0 * * * * *';
-    // const rule = '0 0 * * * *';
+    const rule = '0 0 * * * *';
 
     // app.use((req, res, next) => {
     //   console.log('inside!');
     // });
-    schedule.scheduleJob(rule, () => {
-      console.log('every minute');
-      // meraLampsScraper();
-    });
+
+    // schedule.scheduleJob(rule, () => {
+    console.log('Data scraping time: ' + new Date());
+    meraLampsScraper();
+    // });
 
     app.listen(process.env.PORT || 8101);
   })
