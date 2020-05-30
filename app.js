@@ -32,7 +32,6 @@ mongoose
 
     schedule.scheduleJob(rule, () => {
       console.log('Data scraping time: ' + new Date());
-
       meraLampsScraper();
     });
 

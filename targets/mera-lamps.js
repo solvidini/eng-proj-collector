@@ -51,13 +51,12 @@ const scraper = async () => {
     pageData = pageData.map((element) => {
       return {
         ...element,
-        filename: 'mera-' + uuid.v4(),
+        filename: 'mera-lamps-' + uuid.v4(),
         reference: scrapeLink,
       };
     });
 
     await uploadProducts(pageData);
-
     await browser.close();
   } catch (err) {
     if (!err.statusCode) {
