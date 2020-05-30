@@ -30,10 +30,11 @@ mongoose
     //   console.log('inside!');
     // });
 
-    // schedule.scheduleJob(rule, () => {
-    console.log('Data scraping time: ' + new Date());
-    meraLampsScraper();
-    // });
+    schedule.scheduleJob(rule, () => {
+      console.log('Data scraping time: ' + new Date());
+
+      meraLampsScraper();
+    });
 
     app.listen(process.env.PORT || 8101);
   })

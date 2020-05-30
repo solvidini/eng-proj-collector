@@ -2,6 +2,7 @@ const puppeteer = require('puppeteer');
 const uuid = require('uuid');
 
 const uploadProducts = require('../utils/uploadProducts');
+const errorHandler = require('../utils/errorHandler');
 
 const scrapeLink = 'https://mera.eu/lampy/lampy-wiszace/';
 const scrollDownQuantity = 2;
@@ -59,7 +60,11 @@ const scraper = async () => {
 
     await browser.close();
   } catch (err) {
-    console.log('Mera Scrapping Failed:', err.message);
+    if (!err.statusCode) {
+      err.statusCode = 500;
+    }
+    err.where = 'Mera Lamps';
+    errorHandler(err);
   }
 };
 

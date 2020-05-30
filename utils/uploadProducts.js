@@ -1,5 +1,6 @@
 const download = require('node-image-downloader');
 
+const errorHandler = require('../utils/errorHandler');
 const Product = require('../models/product');
 
 module.exports = async (pageData) => {
@@ -45,7 +46,7 @@ module.exports = async (pageData) => {
       await product.save();
       console.log('Product saved to database!');
     } catch (err) {
-      throw err;
+      errorHandler(err);
     }
   });
 };
