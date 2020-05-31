@@ -3,7 +3,7 @@ const download = require('node-image-downloader');
 const errorHandler = require('../utils/errorHandler');
 const Product = require('../models/product');
 
-module.exports = async (pageData) => {
+module.exports = async (pageData, info) => {
   //Item existance array. 1 = exists, 0 = not exists
   const results = await Promise.all(
     pageData.map((item) =>
@@ -22,7 +22,7 @@ module.exports = async (pageData) => {
     }
   });
   console.log(
-    'Number of new products to upload: ',
+    `Number of new products of ${info} to upload: `,
     filteredData.length
   );
 
@@ -50,7 +50,6 @@ module.exports = async (pageData) => {
       });
       try {
         await product.save();
-        console.log('Product saved to database!');
       } catch (err) {
         errorHandler(err);
       }

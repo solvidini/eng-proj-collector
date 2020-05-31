@@ -5,7 +5,7 @@ const uploadProducts = require('../utils/uploadProducts');
 const errorHandler = require('../utils/errorHandler');
 
 const scrapeLink = 'https://mera.eu/lampy/lampy-wiszace/';
-const scrollDownQuantity = 2;
+const scrollDownQuantity = 6;
 
 const scraper = async () => {
   try {
@@ -56,7 +56,7 @@ const scraper = async () => {
       };
     });
 
-    await uploadProducts(pageData);
+    await uploadProducts(pageData, 'Mera Lamps');
     await browser.close();
   } catch (err) {
     if (!err.statusCode) {
