@@ -12,7 +12,7 @@ const scraper = async (scrapeLink, category) => {
     page = await browser.newPage();
     await page.goto(scrapeLink, { waitUntil: 'networkidle2' });
 
-    await page.waitFor(2000);
+    await page.waitFor(5000);
 
     let pageData =
       (await page.evaluate(() => {

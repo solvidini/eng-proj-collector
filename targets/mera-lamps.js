@@ -38,7 +38,7 @@ const scraper = async () => {
 
         nodeList.forEach((node) => {
           const company = 'mera';
-          const category = 'lampa';
+          const category = 'Lampy';
           const title = node.querySelector('.tile__text').textContent;
           let uri = node.querySelector('.img').getAttribute('style');
           uri = uri.substring(23, uri.length - 3);

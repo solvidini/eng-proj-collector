@@ -23,7 +23,31 @@ mongoose
   )
   .then((result) => {
     console.log('Connected to database.');
-
+    //ikea pages
+    const ikeaPages = [
+      {
+        link:
+          'https://www.ikea.com/pl/pl/cat/fotele-i-szezlongi-fu006/?page=15',
+        category: 'Ikea Chairs',
+      },
+      {
+        link: 'https://www.ikea.com/pl/pl/cat/szafy-19053/?page=15',
+        category: 'Wardrobes',
+      },
+      {
+        link: 'https://www.ikea.com/pl/pl/cat/meble-rtv-10475/?page=15',
+        category: 'RTV Furniture',
+      },
+      {
+        link: 'https://www.ikea.com/pl/pl/cat/lozka-bm003/?page=15',
+        category: 'Beds',
+      },
+      {
+        link:
+          'https://www.ikea.com/pl/pl/cat/biblioteczki-i-regaly-st002/?page=15',
+        category: 'Bookcases and shelves',
+      },
+    ];
     //scrapers
     const rule = '0 0 * * * *';
 
@@ -33,10 +57,9 @@ mongoose
 
     schedule.scheduleJob(rule, () => {
       console.log('Data scraping time: ' + new Date());
-      ikeaScraper(
-        'https://www.ikea.com/pl/pl/cat/fotele-i-szezlongi-fu006/?page=15',
-        'Ikea Chairs'
-      );
+      ikeaPages.forEach((page) => {
+        ikeaScraper(page.link, page.category);
+      });
       meraLampsScraper();
     });
 
