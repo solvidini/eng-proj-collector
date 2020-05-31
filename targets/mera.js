@@ -4,10 +4,9 @@ const uuid = require('uuid');
 const uploadProducts = require('../utils/uploadProducts');
 const errorHandler = require('../utils/errorHandler');
 
-const scrapeLink = 'https://mera.eu/lampy/lampy-wiszace/';
 const scrollDownQuantity = 6;
 
-const scraper = async () => {
+const scraper = async (scrapeLink, category) => {
   try {
     let page;
     const browser = await puppeteer.launch();
@@ -24,7 +23,7 @@ const scraper = async () => {
             document.querySelector('body > footer').offsetHeight
         );
       });
-      await page.waitFor(2000);
+      await page.waitFor(3000);
     }
 
     let pageData =
@@ -38,7 +37,9 @@ const scraper = async () => {
 
         nodeList.forEach((node) => {
           const company = 'mera';
-          const category = 'Lampy';
+          const category = document.querySelector(
+            'body > div.breadcrumb > div > div.breadcrumb__row.breadcrumb__row--nav > a:nth-child(3)'
+          ).textContent;
           const title = node.querySelector('.tile__text').textContent;
           let uri = node.querySelector('.img').getAttribute('style');
           uri = uri.substring(23, uri.length - 3);
@@ -51,18 +52,21 @@ const scraper = async () => {
     pageData = pageData.map((element) => {
       return {
         ...element,
-        filename: 'mera-lamps-' + uuid.v4(),
+        filename:
+          category.toLowerCase().replace(' ', '-') + '-' + uuid.v4(),
         reference: scrapeLink,
       };
     });
 
-    await uploadProducts(pageData, 'Mera Lamps');
+    console.log(pageData);
+
+    await uploadProducts(pageData, category);
     await browser.close();
   } catch (err) {
     if (!err.statusCode) {
       err.statusCode = 500;
     }
-    err.where = 'Mera Lamps';
+    err.where = category;
     errorHandler(err);
   }
 };

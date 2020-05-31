@@ -4,8 +4,9 @@ const schedule = require('node-schedule');
 const express = require('express');
 const mongoose = require('mongoose');
 
+const removeProducts = require('./utils/removeProducts');
 const utils = require('./utils/utils');
-const meraLampsScraper = require('./targets/mera-lamps');
+const meraScraper = require('./targets/mera');
 const ikeaScraper = require('./targets/ikea');
 
 const app = express();
@@ -23,7 +24,8 @@ mongoose
   )
   .then((result) => {
     console.log('Connected to database.');
-    //ikea pages
+
+    // PAGES
     const ikeaPages = [
       {
         link:
@@ -32,36 +34,49 @@ mongoose
       },
       {
         link: 'https://www.ikea.com/pl/pl/cat/szafy-19053/?page=15',
-        category: 'Wardrobes',
+        category: 'Ikea Wardrobes',
       },
       {
         link: 'https://www.ikea.com/pl/pl/cat/meble-rtv-10475/?page=15',
-        category: 'RTV Furniture',
+        category: 'Ikea RTV Furniture',
       },
       {
         link: 'https://www.ikea.com/pl/pl/cat/lozka-bm003/?page=15',
-        category: 'Beds',
+        category: 'Ikea Beds',
       },
       {
         link:
           'https://www.ikea.com/pl/pl/cat/biblioteczki-i-regaly-st002/?page=15',
-        category: 'Bookcases and shelves',
+        category: 'Ikea Bookcases and shelves',
       },
     ];
-    //scrapers
-    const rule = '0 0 * * * *';
+    const meraPages = [
+      {
+        link: 'https://mera.eu/lampy/lampy-wiszace/',
+        category: 'Mera Lampy Wiszace',
+      },
+      {
+        link: 'https://mera.eu/lampy/lampy-stojace/',
+        category: 'Mera Lampy Stojace',
+      },
+    ];
 
-    // app.use((req, res, next) => {
-    //   console.log('inside!');
-    // });
+    // SCHEDULE OPTIONS
+    const rule = '0 0 0 * * *';
 
+    // SCRAPERS
     schedule.scheduleJob(rule, () => {
       console.log('Data scraping time: ' + new Date());
       ikeaPages.forEach((page) => {
         ikeaScraper(page.link, page.category);
       });
-      meraLampsScraper();
+
+      meraPages.forEach((page) => {
+        meraScraper(page.link, page.category);
+      });
     });
+
+    // removeProducts('mera');
 
     app.listen(process.env.PORT || 8101);
   })
