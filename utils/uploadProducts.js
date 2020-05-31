@@ -40,14 +40,21 @@ module.exports = async (pageData, info) => {
 
     //save data to database
     filteredData.forEach(async (item) => {
-      const product = new Product({
+      let productData = {
         title: item.title,
         path: item.path,
         company: item.company,
         uri: item.uri,
         reference: item.reference,
         category: item.category,
-      });
+      };
+      if (item.description) {
+        productData.description = item.description;
+      }
+      if (item.price) {
+        productData.price = item.price;
+      }
+      const product = new Product(productData);
       try {
         await product.save();
       } catch (err) {

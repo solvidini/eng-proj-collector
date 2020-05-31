@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 
 const utils = require('./utils/utils');
 const meraLampsScraper = require('./targets/mera-lamps');
+const ikeaScraper = require('./targets/ikea');
 
 const app = express();
 
@@ -32,6 +33,10 @@ mongoose
 
     schedule.scheduleJob(rule, () => {
       console.log('Data scraping time: ' + new Date());
+      ikeaScraper(
+        'https://www.ikea.com/pl/pl/cat/fotele-i-szezlongi-fu006/?page=15',
+        'Ikea Chairs'
+      );
       meraLampsScraper();
     });
 
