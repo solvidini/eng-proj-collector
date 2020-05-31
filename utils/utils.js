@@ -8,8 +8,10 @@ const clearImage = (filePath) => {
   });
 };
 
-module.exports.clearImage = clearImage;
+const asyncForEach = async (array, callback) => {
+  for (let index = 0; index < array.length; index++) {
+    await callback(array[index], index, array);
+  }
+};
 
-// utils.clearImage(
-//   'images/mera-0a087b55-1350-4fe9-a7dc-a2fa1d4fe0a0.png'
-// );
+module.exports = { clearImage, asyncForEach };

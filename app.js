@@ -5,7 +5,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 const removeProducts = require('./utils/removeProducts');
-const utils = require('./utils/utils');
+const { asyncForEach } = require('./utils/utils');
 const meraScraper = require('./targets/mera');
 const ikeaScraper = require('./targets/ikea');
 
@@ -65,18 +65,21 @@ mongoose
     const rule = '0 0 0 * * *';
 
     // SCRAPERS
-    schedule.scheduleJob(rule, () => {
+    schedule.scheduleJob(rule, async () => {
       console.log('Data scraping time: ' + new Date());
-      ikeaPages.forEach((page) => {
-        ikeaScraper(page.link, page.category);
+
+      await asyncForEach(ikeaPages, async (page, index) => {
+        await ikeaScraper(page.link, page.category);
+        console.log('Page ' + index + '(' + page.category + ')');
       });
 
-      meraPages.forEach((page) => {
-        meraScraper(page.link, page.category);
+      await asyncForEach(meraPages, async (page, index) => {
+        await meraScraper(page.link, page.category);
+        console.log('Page ' + index + '(' + page.category + ')');
       });
     });
 
-    // removeProducts('mera');
+    // removeProducts('mera'); // DON'T TOUCH
 
     app.listen(process.env.PORT || 8101);
   })

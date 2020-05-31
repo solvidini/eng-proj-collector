@@ -58,9 +58,8 @@ const scraper = async (scrapeLink, category) => {
       };
     });
 
-    console.log(pageData);
-
     await uploadProducts(pageData, category);
+    console.log('Successfully uploaded products.');
     await browser.close();
   } catch (err) {
     if (!err.statusCode) {
