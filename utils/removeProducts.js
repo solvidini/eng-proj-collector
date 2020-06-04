@@ -3,8 +3,8 @@ const clearImage = require('./utils.js').clearImage;
 const errorHandler = require('../utils/errorHandler');
 const Product = require('../models/product');
 
-module.exports = async (name) => {
-  Product.find({ company: name })
+module.exports = async (removeBy) => {
+  Product.find(removeBy)
     .then((documents) => {
       documents.forEach((document) => {
         clearImage(document.path);

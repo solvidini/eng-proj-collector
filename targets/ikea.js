@@ -4,7 +4,7 @@ const uuid = require('uuid');
 const uploadProducts = require('../utils/uploadProducts');
 const errorHandler = require('../utils/errorHandler');
 
-const scraper = async (scrapeLink, category) => {
+const scraper = async (scrapeLink, scrapeID) => {
   try {
     let page;
     const browser = await puppeteer.launch();
@@ -63,20 +63,21 @@ const scraper = async (scrapeLink, category) => {
     pageData = pageData.map((element) => {
       return {
         ...element,
+        scrapeID: scrapeID,
         filename:
-          category.toLowerCase().replace(' ', '-') + '-' + uuid.v4(),
+          scrapeID.toLowerCase().replace(' ', '-') + '-' + uuid.v4(),
         description: element.description.replace(/\s\s+/g, ''),
       };
     });
 
-    await uploadProducts(pageData, category);
-    console.log('Successfully uploaded products.');
+    await uploadProducts(pageData, scrapeID);
+    console.log(`Successfully scrapped ${scrapeID} products.`);
     await browser.close();
   } catch (err) {
     if (!err.statusCode) {
       err.statusCode = 500;
     }
-    err.where = category;
+    err.where = scrapeID;
     errorHandler(err);
   }
 };
