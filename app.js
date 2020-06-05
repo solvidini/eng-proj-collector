@@ -28,6 +28,7 @@ mongoose
     console.log('Connected to database.');
 
     // PAGES
+    // PRODUCTS
     const ikeaPages = [
       {
         link:
@@ -62,39 +63,45 @@ mongoose
         scrapeID: 'Mera Lampy Stojace',
       },
     ];
+    // SERVICES
     const fiziaPages = [
       {
         link: 'http://www.fizia.pl/oferta/1/drzwi-wewnetrzne',
         scrapeID: 'Fizia Drzwi Wewnetrzne',
         imgNumber: 5,
-        category: 'Wykonanie drzwi',
+        category: 'Usługa + Produkt (Wykonanie drzwi)',
       },
       {
         link: 'http://www.fizia.pl/oferta/5/meble',
         scrapeID: 'Fizia Meble',
         imgNumber: 2,
-        category: 'Wykonanie mebli',
+        category: 'Usługa + Produkt (Wykonanie mebli)',
       },
       {
         link: 'http://www.fizia.pl/oferta/3/schody',
         scrapeID: 'Fizia Schody',
         imgNumber: 4,
-        category: 'Wykonanie schodów',
+        category: 'Usługa + Produkt (Wykonanie schodów)',
       },
       {
         link:
           'http://www.fizia.pl/oferta/4/drzwi-p-poz-i-specjalnego-przeznaczenia',
         scrapeID: 'Fizia Drzwi Specjalne',
         imgNumber: 3,
-        category: 'Wykonanie Drzwi',
+        category: 'Usługa + Produkt (Wykonanie drzwi)',
       },
       {
         link: 'http://www.fizia.pl/oferta/2/drzwi-zewnetrzne',
         scrapeID: 'Fizia Drzwi Zewnetrzne',
         imgNumber: 2,
-        category: 'Wykonanie Drzwi',
+        category: 'Usługa + Produkt (Wykonanie drzwi)',
       },
     ];
+    const projektW = {
+      link: 'http://projektw.pl/',
+      scrapeID: 'Projekt W',
+      category: 'Usługa (Projekt wnętrza)',
+    };
 
     // SCHEDULE OPTIONS
     const rule = '0 0 0 * * *';
@@ -103,7 +110,11 @@ mongoose
     // schedule.scheduleJob(rule, async () => {
     //   console.log('Data scraping time: ' + new Date());
     (async () => {
-      await projektwScraper();
+      await projektwScraper(
+        projektW.link,
+        projektW.scrapeID,
+        projektW.category
+      );
 
       await asyncForEach(fiziaPages, async (page, index) => {
         await fiziaScraper(

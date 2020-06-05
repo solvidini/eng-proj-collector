@@ -8,7 +8,8 @@ const errorHandler = require('../utils/errorHandler');
 
 const scraper = async (
   scrapeLink = 'http://projektw.pl/',
-  scrapeID = 'Projekt W'
+  scrapeID = 'Projekt W',
+  cat
 ) => {
   try {
     response = await fetch(scrapeLink);
@@ -25,7 +26,7 @@ const scraper = async (
     const company = 'Projekt W';
     const reference = scrapeLink;
     const uri = reference + $('link[rel="icon"]').attr('href');
-    const category = 'Architektura';
+    const category = cat;
 
     pageData = {
       scrapeID: scrapeID,
