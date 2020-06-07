@@ -3,7 +3,11 @@ const Schema = mongoose.Schema;
 
 const errorSchema = new Schema(
   {
-    where: {
+    scrapeID: {
+      type: String,
+      required: true,
+    },
+    type: {
       type: String,
       required: true,
     },
@@ -15,10 +19,19 @@ const errorSchema = new Schema(
       type: Number,
       required: true,
     },
+    iteration: {
+      type: Number,
+      required: true,
+    },
   },
   {
     timestamps: true,
   }
 );
+
+errorSchema.methods.reset = function () {
+  this.iteration = 0;
+  return this.save();
+};
 
 module.exports = mongoose.model('Error', errorSchema);

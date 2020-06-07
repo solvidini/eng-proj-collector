@@ -1,10 +1,12 @@
 const download = require('node-image-downloader');
 
-const { isEqual } = require('../utils/utils');
+const { isEqual, clearImage } = require('../utils/utils');
 const errorHandler = require('../utils/errorHandler');
 const Service = require('../models/service');
+const Error = require('../models/error');
 
 module.exports = async (pageData, scrapeID) => {
+  let downloadedImages; //
   try {
     const exists = await Service.find({
       description: pageData.description,
@@ -15,13 +17,13 @@ module.exports = async (pageData, scrapeID) => {
         //download image
         const array = [];
         array.push(pageData);
-        const info = await download({
+        downloadedImages = await download({
           imgs: array,
           dest: './images',
         });
 
         delete pageData.filename;
-        pageData.path = info[0].path;
+        pageData.path = downloadedImages[0].path;
       }
 
       //save data to database
@@ -46,20 +48,50 @@ module.exports = async (pageData, scrapeID) => {
           description: 1,
         }
       );
-      const updatedService = service[0]._doc;
-      delete updatedService.path;
+      const oldDataService = service[0]._doc;
+      const oldImagePath = oldDataService.path;
+      const newImageFilename = pageData.filename;
+      delete oldDataService.path;
       delete pageData.filename;
 
-      if (!isEqual(updatedService, pageData)) {
+      if (!isEqual(oldDataService, pageData)) {
+        if (oldDataService.uri !== pageData.uri) {
+          //remove old image
+          clearImage(oldImagePath);
+          //download new image
+          pageData.filename = newImageFilename;
+          const array = [];
+          array.push(pageData);
+          downloadedImages = await download({
+            imgs: array,
+            dest: './images',
+          });
+
+          delete pageData.filename;
+          pageData.path = downloadedImages[0].path;
+        }
         await Service.updateOne({ scrapeID: scrapeID }, pageData);
         console.log('Updated ' + scrapeID + ' service.');
       }
+    }
+
+    const errorExists = await Error.findOne({
+      scrapeID: scrapeID,
+    }).countDocuments();
+    if (errorExists > 0) {
+      const error = await Error.findOne({ scrapeID: scrapeID });
+      error.reset();
     }
   } catch (err) {
     if (!err.statusCode) {
       err.statusCode = 500;
     }
-    err.where = scrapeID + ' uploadService';
+    err.scrapeID = scrapeID;
+    err.type = 'services';
+    
+    downloadedImages.forEach((element) => {
+        clearImage(element.path);
+    });
     errorHandler(err);
   }
 };

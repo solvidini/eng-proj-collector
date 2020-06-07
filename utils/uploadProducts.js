@@ -2,8 +2,10 @@ const download = require('node-image-downloader');
 
 const errorHandler = require('../utils/errorHandler');
 const Product = require('../models/product');
+const Error = require('../models/error');
 
 module.exports = async (pageData, scrapeID) => {
+  let downloadedImages;
   try {
     //Item existance array. 1 = exists, 0 = not exists
     const results = await Promise.all(
@@ -29,12 +31,12 @@ module.exports = async (pageData, scrapeID) => {
 
     if (filteredData.length >= 1) {
       //download images
-      const info = await download({
+      downloadedImages = await download({
         imgs: filteredData,
         dest: './images',
       });
 
-      info.forEach((element, index) => {
+      downloadedImages.forEach((element, index) => {
         delete filteredData[index].filename;
         filteredData[index].path = element.path;
       });
@@ -61,11 +63,23 @@ module.exports = async (pageData, scrapeID) => {
         await product.save();
       });
     }
+    const errorExists = await Error.findOne({
+      scrapeID: scrapeID,
+    }).countDocuments();
+    if (errorExists > 0) {
+      const error = await Error.findOne({ scrapeID: scrapeID });
+      error.reset();
+    }
   } catch (err) {
     if (!err.statusCode) {
       err.statusCode = 500;
     }
-    err.where = scrapeID + ' uploadProducts';
+    err.scrapeID = scrapeID;
+    err.type = 'products';
+
+    downloadedImages.forEach((element) => {
+      clearImage(element.path);
+    });
     errorHandler(err);
   }
 };

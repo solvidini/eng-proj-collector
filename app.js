@@ -74,7 +74,7 @@ mongoose
       {
         link: 'http://www.fizia.pl/oferta/5/meble',
         scrapeID: 'Fizia Meble',
-        imgNumber: 2,
+        imgNumber: 6,
         category: 'Usługa + Produkt (Wykonanie mebli)',
       },
       {
@@ -110,26 +110,26 @@ mongoose
     // schedule.scheduleJob(rule, async () => {
     //   console.log('Data scraping time: ' + new Date());
     (async () => {
-      await projektwScraper(
-        projektW.link,
-        projektW.scrapeID,
-        projektW.category
-      );
+      // await projektwScraper(
+      //   projektW.link,
+      //   projektW.scrapeID,
+      //   projektW.category
+      // );
 
-      await asyncForEach(fiziaPages, async (page, index) => {
-        await fiziaScraper(
-          page.link,
-          page.scrapeID,
-          page.imgNumber,
-          page.category
-        );
-        console.log('Page ' + index + '(' + page.scrapeID + ')');
-      });
-
-      // await asyncForEach(ikeaPages, async (page, index) => {
-      //   await ikeaScraper(page.link, page.scrapeID);
+      // await asyncForEach(fiziaPages, async (page, index) => {
+      //   await fiziaScraper(
+      //     page.link,
+      //     page.scrapeID,
+      //     page.imgNumber,
+      //     page.category
+      //   );
       //   console.log('Page ' + index + '(' + page.scrapeID + ')');
       // });
+
+      await asyncForEach(ikeaPages, async (page, index) => {
+        await ikeaScraper(page.link, page.scrapeID);
+        console.log('Page ' + index + '(' + page.scrapeID + ')');
+      });
 
       // await asyncForEach(meraPages, async (page, index) => {
       //   await meraScraper(page.link, page.scrapeID);

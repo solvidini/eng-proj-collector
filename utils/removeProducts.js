@@ -1,19 +1,21 @@
 const clearImage = require('./utils.js').clearImage;
 
-const errorHandler = require('../utils/errorHandler');
 const Product = require('../models/product');
 
-module.exports = async (removeBy) => {
-  Product.find(removeBy)
+module.exports = (scrapeID) => {
+  Product.find({ scrapeID: scrapeID })
     .then((documents) => {
-      documents.forEach((document) => {
-        clearImage(document.path);
-        document.remove();
-      });
-      console.log('Products removed');
+      if (documents) {
+        documents.forEach((document) => {
+          if (document.path) {
+            clearImage(document.path);
+          }
+          document.remove();
+        });
+        console.log('Products removed due to error.');
+      }
     })
     .catch((err) => {
       console.log(err);
-      errorHandler(err);
     });
 };

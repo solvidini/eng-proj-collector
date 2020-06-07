@@ -41,7 +41,9 @@ const scraper = async (
     pageData = {
       ...pageData,
       filename:
-        scrapeID.toLowerCase().replace(' ', '-') + '-' + uuid.v4(),
+        scrapeID.toLocaleLowerCase().replace(/\s+/g, '-') +
+        '-' +
+        uuid.v4(),
     };
 
     await uploadService(pageData, scrapeID);
@@ -50,7 +52,8 @@ const scraper = async (
     if (!err.statusCode) {
       err.statusCode = 500;
     }
-    err.where = scrapeID;
+    err.scrapeID = scrapeID;
+    err.type = 'services';
     errorHandler(err);
   }
 };

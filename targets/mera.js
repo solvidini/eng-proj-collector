@@ -54,7 +54,7 @@ const scraper = async (scrapeLink, scrapeID) => {
         ...element,
         scrapeID: scrapeID,
         filename:
-          scrapeID.toLowerCase().replace(' ', '-') + '-' + uuid.v4(),
+          scrapeID.toLocaleLowerCase().replace(/\s+/g, '-') + '-' + uuid.v4(),
         reference: scrapeLink,
       };
     });
@@ -66,7 +66,8 @@ const scraper = async (scrapeLink, scrapeID) => {
     if (!err.statusCode) {
       err.statusCode = 500;
     }
-    err.where = scrapeID;
+    err.scrapeID = scrapeID;
+    err.type = 'products';
     errorHandler(err);
   }
 };
