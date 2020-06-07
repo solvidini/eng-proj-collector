@@ -4,12 +4,15 @@ const uuid = require('uuid');
 const uploadProducts = require('../utils/uploadProducts');
 const errorHandler = require('../utils/errorHandler');
 
-const scrollDownQuantity = 6;
-
-const scraper = async (scrapeLink, scrapeID) => {
+const scraper = async (
+  scrapeLink,
+  scrapeID,
+  deepLevel = 3,
+  scrollDownQuantity = 6
+) => {
   try {
     let page;
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch(); // {headless: false}
 
     page = await browser.newPage();
     await page.goto(scrapeLink, { waitUntil: 'networkidle2' });
@@ -19,15 +22,17 @@ const scraper = async (scrapeLink, scrapeID) => {
         window.scrollTo(
           0,
           document.querySelector('body > div.page > div.producer')
-            .offsetTop -
-            document.querySelector('body > footer').offsetHeight
+            ? document.querySelector('body > div.page > div.producer')
+                .offsetTop -
+                document.querySelector('body > footer').offsetHeight
+            : 0
         );
       });
       await page.waitFor(3000);
     }
 
     let pageData =
-      (await page.evaluate(() => {
+      (await page.evaluate((deepLevel) => {
         window.scrollTo(0, document.body.scrollHeight);
         let data = [];
 
@@ -38,7 +43,7 @@ const scraper = async (scrapeLink, scrapeID) => {
         nodeList.forEach((node) => {
           const company = 'mera';
           const category = document.querySelector(
-            'body > div.breadcrumb > div > div.breadcrumb__row.breadcrumb__row--nav > a:nth-child(3)'
+            `body > div.breadcrumb > div > div.breadcrumb__row.breadcrumb__row--nav > a:nth-child(${deepLevel})`
           ).textContent;
           const title = node.querySelector('.tile__text').textContent;
           let uri = node.querySelector('.img').getAttribute('style');
@@ -47,14 +52,16 @@ const scraper = async (scrapeLink, scrapeID) => {
         });
 
         return data;
-      })) || [];
+      }, deepLevel)) || [];
 
     pageData = pageData.map((element) => {
       return {
         ...element,
         scrapeID: scrapeID,
         filename:
-          scrapeID.toLocaleLowerCase().replace(/\s+/g, '-') + '-' + uuid.v4(),
+          scrapeID.toLocaleLowerCase().replace(/\s+/g, '-') +
+          '-' +
+          uuid.v4(),
         reference: scrapeLink,
       };
     });

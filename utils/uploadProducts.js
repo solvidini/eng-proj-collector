@@ -1,6 +1,5 @@
 const download = require('node-image-downloader');
 
-const errorHandler = require('../utils/errorHandler');
 const Product = require('../models/product');
 const Error = require('../models/error');
 
@@ -71,15 +70,9 @@ module.exports = async (pageData, scrapeID) => {
       error.reset();
     }
   } catch (err) {
-    if (!err.statusCode) {
-      err.statusCode = 500;
-    }
-    err.scrapeID = scrapeID;
-    err.type = 'products';
-
     downloadedImages.forEach((element) => {
       clearImage(element.path);
     });
-    errorHandler(err);
+    throw err;
   }
 };

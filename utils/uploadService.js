@@ -1,7 +1,6 @@
 const download = require('node-image-downloader');
 
 const { isEqual, clearImage } = require('../utils/utils');
-const errorHandler = require('../utils/errorHandler');
 const Service = require('../models/service');
 const Error = require('../models/error');
 
@@ -83,15 +82,9 @@ module.exports = async (pageData, scrapeID) => {
       error.reset();
     }
   } catch (err) {
-    if (!err.statusCode) {
-      err.statusCode = 500;
-    }
-    err.scrapeID = scrapeID;
-    err.type = 'services';
-    
     downloadedImages.forEach((element) => {
-        clearImage(element.path);
+      clearImage(element.path);
     });
-    errorHandler(err);
+    throw err;
   }
 };

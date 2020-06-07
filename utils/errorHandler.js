@@ -39,7 +39,7 @@ module.exports = async (error) => {
       updatedError.message = error.message;
       updatedError.statusCode = error.statusCode;
 
-      if (updatedError.iteration > 3) {
+      if (updatedError.iteration > 7) {
         if (updatedError.type === 'products') {
           removeProducts(updatedError.scrapeID);
         } else if (updatedError.type === 'services') {
