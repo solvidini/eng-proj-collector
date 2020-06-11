@@ -16,32 +16,24 @@ const scraper = async (scrapeLink, scrapeID, cat) => {
     const $ = cheerio.load(html);
     let pageData;
 
-    const title = 'Projektowanie wnętrz';
-    const description = $('meta[name="description"]').attr('content');
-    const company = 'Projekt W';
+    const title = 'Wykonanie instalacji elektrycznych';
+    const description = $(
+      'body > table > tbody > tr > td:nth-child(2) > table > tbody > tr:nth-child(1) > td:nth-child(2) > table > tbody > tr:nth-child(3) > td > table > tbody > tr:nth-child(3) > td:nth-child(2) > table > tbody > tr > td > table > tbody > tr'
+    ).text();
+    const company = 'Elmax';
     const reference = scrapeLink;
-    const uri = reference + $('link[rel="icon"]').attr('href');
     const category = cat;
 
     pageData = {
       scrapeID: scrapeID,
       title,
       description,
-      uri,
       company,
       reference,
       category,
     };
 
     console.log(pageData);
-
-    pageData = {
-      ...pageData,
-      filename:
-        scrapeID.toLocaleLowerCase().replace(/\s+/g, '-') +
-        '-' +
-        uuid.v4(),
-    };
 
     await uploadService(pageData, scrapeID);
     console.log(`Successfully scrapped ${scrapeID} service.`);

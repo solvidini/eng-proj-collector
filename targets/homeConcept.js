@@ -16,11 +16,20 @@ const scraper = async (scrapeLink, scrapeID, cat) => {
     const $ = cheerio.load(html);
     let pageData;
 
-    const title = 'Projektowanie wnętrz';
-    const description = $('meta[name="description"]').attr('content');
-    const company = 'Projekt W';
+    const title = $(
+      'body > div.wrapper > main > div > div.col-md-8.col-12.mb-2.editor-text > h1'
+    )
+      .text()
+      .replace(/\n/g, '');
+    let description = $(
+      'body > div.wrapper > main > div > div.col-md-8.col-12.mb-2.editor-text > p:nth-child(3)'
+    ).text();
+
+    const company = 'Home Concept';
     const reference = scrapeLink;
-    const uri = reference + $('link[rel="icon"]').attr('href');
+    let uri = $(
+      'body > div.wrapper > main > div > div.col-md-4.col-12.row-custom.mb-2.editor-text > div > img'
+    ).attr('data-src');
     const category = cat;
 
     pageData = {
@@ -33,8 +42,6 @@ const scraper = async (scrapeLink, scrapeID, cat) => {
       category,
     };
 
-    console.log(pageData);
-
     pageData = {
       ...pageData,
       filename:
@@ -42,6 +49,8 @@ const scraper = async (scrapeLink, scrapeID, cat) => {
         '-' +
         uuid.v4(),
     };
+
+    console.log(pageData);
 
     await uploadService(pageData, scrapeID);
     console.log(`Successfully scrapped ${scrapeID} service.`);

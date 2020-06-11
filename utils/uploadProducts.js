@@ -10,7 +10,11 @@ module.exports = async (pageData, scrapeID) => {
     const results = await Promise.all(
       pageData.map((item) =>
         Product.find({
-          $and: [{ uri: item.uri }, { title: item.title }],
+          $and: [
+            { scrapeID: scrapeID },
+            { uri: item.uri },
+            { title: item.title },
+          ],
         }).countDocuments()
       )
     );

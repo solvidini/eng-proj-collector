@@ -8,7 +8,7 @@ module.exports = async (pageData, scrapeID) => {
   let downloadedImages; //
   try {
     const exists = await Service.find({
-      description: pageData.description,
+      scrapeID: scrapeID,
     }).countDocuments();
 
     if (exists === 0) {

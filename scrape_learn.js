@@ -1,44 +1,59 @@
 const fetch = require('node-fetch');
 const cheerio = require('cheerio');
-const request = require('request');
+const download = require('node-image-downloader');
 
-fetch('https://qwe.wiki/')
+const scrapeLink = 'https://en.wikipedia.org/wiki/Main_Page';
+
+fetch(scrapeLink)
   .then((response) => {
+    if (response.status !== 200) {
+      console.log(response.status);
+    }
     return response.text();
   })
   .then((html) => {
     const $ = cheerio.load(html);
+    const webData = [];
 
-    const articleBody = $('#content');
+    $('#sister-projects-list')
+      .children()
+      .each((i, el) => {
+        const imgTitle = $(el).find('a').attr('title');
+        const imgSrc = $(el).find('img').attr('src');
+        const link = $(el).find('a').attr('href');
+        const title = $(el).children().next().children().text();
+        const description = $(el)
+          .children()
+          .next()
+          .text()
+          .split(' ')
+          .slice(2)
+          .join(' ');
 
-    // console.log(articleBody.text());
-    // console.log(articleBody.html());
-    // const output = articleBody.find('h1').html();
-    // const output = articleBody.find('h1').text();
-    // children parent
+        webData.push({
+          scrapeLink,
+          imgTitle,
+          imgSrc,
+          link,
+          title,
+          description,
+        });
 
-    // const output = articleBody.find('h1').text();
-    articleBody.find('.col-md-3').each((i, el) => {
-      const item = $(el).text();
-      const link = $(el).children().attr('href');
+        download({
+          imgs: [{ uri: 'https:' + imgSrc }],
+          dest: './images',
+        })
+          .then((info) => {
+            console.log('Download complete');
+            // process.exit(1);
+          })
+          .catch((err) => console.log(err));
+      });
 
-      console.log(item, link);
-    });
+    console.log(webData);
 
-    // console.log(output);
+    //.text().replace(/\s\s+/g, '');
+    //.text().replace(/,/, '');
+    // console.log(article);
   })
   .catch((err) => console.log(err));
-
-// request(
-//   'https://github.com/cheeriojs/cheerio',
-//   (error, response, html) => {
-//     if (!error && response.statusCode == 200) {
-//       const $ = cheerio.load(html);
-
-//       const articleBody = $('.markdown-body.entry-content');
-
-//       // console.log(articleBody.text());
-//       console.log(articleBody.html());
-//     }
-//   }
-// );

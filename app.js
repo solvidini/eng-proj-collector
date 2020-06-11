@@ -4,13 +4,14 @@ const schedule = require('node-schedule');
 const express = require('express');
 const mongoose = require('mongoose');
 
-const removeSpecProducts = require('./utils/removeSpecProducts');
-const removeProducts = require('./utils/removeProducts');
+// const removeSpecProducts = require('./utils/removeSpecProducts');
 const { asyncForEach } = require('./utils/utils');
 const meraScraper = require('./targets/mera');
 const ikeaScraper = require('./targets/ikea');
-const projektwScraper = require('./targets/projektw');
+const projektwScraper = require('./targets/projektW');
 const fiziaScraper = require('./targets/fizia');
+const elmaxScraper = require('./targets/elmax');
+const homeConceptScraper = require('./targets/homeConcept');
 
 const app = express();
 
@@ -376,24 +377,59 @@ mongoose
         category: 'Usługa + Produkt (Wykonanie drzwi)',
       },
     ];
+    const homeConceptPages = [
+      {
+        link: 'https://homeconcept.com.pl/katowice/uslugi/doradztwo/',
+        scrapeID: 'Home Concept Doradztwo',
+        category: 'Usługa (Porada specjalisty)',
+      },
+      {
+        link: 'https://homeconcept.com.pl/katowice/uslugi/pomiar/',
+        scrapeID: 'Home Concept Pomiar',
+        category: 'Usługa (Pomiar elementów)',
+      },
+      {
+        link:
+          'https://homeconcept.com.pl/katowice/uslugi/projektowanie/',
+        scrapeID: 'Home Concept Projektowanie',
+        category: 'Usługa (Projekty wnętrz)',
+      },
+      {
+        link: 'https://homeconcept.com.pl/katowice/uslugi/transport/',
+        scrapeID: 'Home Concept Transport',
+        category: 'Usługa (Transport produktów)',
+      },
+      {
+        link: 'https://homeconcept.com.pl/katowice/uslugi/montaz/',
+        scrapeID: 'Home Concept Montaz',
+        category: 'Usługa (Montaż)',
+      },
+    ];
     const projektW = {
       link: 'http://projektw.pl/',
       scrapeID: 'Projekt W',
-      category: 'Usługa (Projekt wnętrza)',
+      category: 'Usługa (Projekty wnętrz)',
+    };
+    const elmax = {
+      link: 'https://www.elmax.tychy.pl/oferta.html',
+      scrapeID: 'Elmax',
+      category: 'Usługa (Instalacje elektryczne)',
     };
 
     // SCHEDULE OPTIONS
-    const rule = '0 0 0 * * *';
+    const rule = '0 0 3 * * 1,3,5,7';
 
     // SCRAPERS
-    // schedule.scheduleJob(rule, async () => {
-    //   console.log('Data scraping time: ' + new Date());
-    (async () => {
-      // await projektwScraper(
-      //   projektW.link,
-      //   projektW.scrapeID,
-      //   projektW.category
-      // );
+    schedule.scheduleJob(rule, async () => {
+      console.log('Data scraping time: ' + new Date());
+      // await asyncForEach(homeConceptPages, async (page, index) => {
+      //   await homeConceptScraper(
+      //     page.link,
+      //     page.scrapeID,
+      //     page.category
+      //   );
+      //   console.log('Page ' + index + '(' + page.scrapeID + ')');
+      // });
       // await asyncForEach(fiziaPages, async (page, index) => {
       //   await fiziaScraper(
       //     page.link,
@@ -408,15 +444,29 @@ mongoose
       //   console.log('Page ' + index + '(' + page.scrapeID + ')');
       // });
       // await asyncForEach(meraPages, async (page, index) => {
-      //   await meraScraper(
+      //   await meraScraper(page.link, page.scrapeID, page.deepLevel);
+      //   console.log('Page ' + index + '(' + page.scrapeID + ')');
+      // });
+      // await projektwScraper(
+      //   projektW.link,
+      //   projektW.scrapeID,
+      //   projektW.category
+      // );
+      // await asyncForEach(homeConceptPages, async (page, index) => {
+      //   await homeConceptScraper(
       //     page.link,
       //     page.scrapeID,
-      //     page.deepLevel
+      //     page.category
       //   );
       //   console.log('Page ' + index + '(' + page.scrapeID + ')');
       // });
-    })();
-    // });
+    });
+    // (async () => {
+    //   await asyncForEach(meraPages, async (page, index) => {
+    //     await meraScraper(page.link, page.scrapeID, page.deepLevel);
+    //     console.log('Page ' + index + '(' + page.scrapeID + ')');
+    //   });
+    // })();
 
     app.listen(process.env.PORT || 8101);
   })
