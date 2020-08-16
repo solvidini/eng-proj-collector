@@ -419,7 +419,7 @@ mongoose
     };
 
     // SCHEDULE OPTIONS
-    const rule = '0 0 2 * * 1,3,5';
+    const rule = '0 0 2 * * 1,3,5,7';
     const refreshRule = '0 0 4 1 * *';
 
     // SCRAPERS
