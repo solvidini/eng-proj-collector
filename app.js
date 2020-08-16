@@ -478,10 +478,46 @@ mongoose
         console.log('Page ' + index + '(' + page.scrapeID + ')');
       });
     });
+
     //TESTING PART
     // (async () => {
+    //   console.log('(Testing) Data scraping time: ' + new Date());
+    //   await asyncForEach(homeConceptPages, async (page, index) => {
+    //     await homeConceptScraper(
+    //       page.link,
+    //       page.scrapeID,
+    //       page.category
+    //     );
+    //     console.log('Page ' + index + '(' + page.scrapeID + ')');
+    //   });
+    //   await asyncForEach(fiziaPages, async (page, index) => {
+    //     await fiziaScraper(
+    //       page.link,
+    //       page.scrapeID,
+    //       page.imgNumber,
+    //       page.category
+    //     );
+    //     console.log('Page ' + index + '(' + page.scrapeID + ')');
+    //   });
+    //   await asyncForEach(ikeaPages, async (page, index) => {
+    //     await ikeaScraper(page.link, page.scrapeID);
+    //     console.log('Page ' + index + '(' + page.scrapeID + ')');
+    //   });
     //   await asyncForEach(meraPages, async (page, index) => {
     //     await meraScraper(page.link, page.scrapeID, page.deepLevel);
+    //     console.log('Page ' + index + '(' + page.scrapeID + ')');
+    //   });
+    //   await projektwScraper(
+    //     projektW.link,
+    //     projektW.scrapeID,
+    //     projektW.category
+    //   );
+    //   await asyncForEach(homeConceptPages, async (page, index) => {
+    //     await homeConceptScraper(
+    //       page.link,
+    //       page.scrapeID,
+    //       page.category
+    //     );
     //     console.log('Page ' + index + '(' + page.scrapeID + ')');
     //   });
     // })();
