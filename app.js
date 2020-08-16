@@ -13,6 +13,8 @@ const fiziaScraper = require('./targets/fizia');
 const elmaxScraper = require('./targets/elmax');
 const homeConceptScraper = require('./targets/homeConcept');
 
+const Product = require('./models/product');
+
 const app = express();
 
 //static images download
@@ -417,50 +419,66 @@ mongoose
     };
 
     // SCHEDULE OPTIONS
-    const rule = '0 0 3 * * 1,3,5,7';
+    const rule = '0 0 2 * * 1,3,5';
+    const refreshRule = '0 0 4 1 * *';
 
     // SCRAPERS
+    // UPDATE
     schedule.scheduleJob(rule, async () => {
       console.log('Data scraping time: ' + new Date());
-      // await asyncForEach(homeConceptPages, async (page, index) => {
-      //   await homeConceptScraper(
-      //     page.link,
-      //     page.scrapeID,
-      //     page.category
-      //   );
-      //   console.log('Page ' + index + '(' + page.scrapeID + ')');
-      // });
-      // await asyncForEach(fiziaPages, async (page, index) => {
-      //   await fiziaScraper(
-      //     page.link,
-      //     page.scrapeID,
-      //     page.imgNumber,
-      //     page.category
-      //   );
-      //   console.log('Page ' + index + '(' + page.scrapeID + ')');
-      // });
-      // await asyncForEach(ikeaPages, async (page, index) => {
-      //   await ikeaScraper(page.link, page.scrapeID);
-      //   console.log('Page ' + index + '(' + page.scrapeID + ')');
-      // });
-      // await asyncForEach(meraPages, async (page, index) => {
-      //   await meraScraper(page.link, page.scrapeID, page.deepLevel);
-      //   console.log('Page ' + index + '(' + page.scrapeID + ')');
-      // });
-      // await projektwScraper(
-      //   projektW.link,
-      //   projektW.scrapeID,
-      //   projektW.category
-      // );
-      // await asyncForEach(homeConceptPages, async (page, index) => {
-      //   await homeConceptScraper(
-      //     page.link,
-      //     page.scrapeID,
-      //     page.category
-      //   );
-      //   console.log('Page ' + index + '(' + page.scrapeID + ')');
-      // });
+      await asyncForEach(homeConceptPages, async (page, index) => {
+        await homeConceptScraper(
+          page.link,
+          page.scrapeID,
+          page.category
+        );
+        console.log('Page ' + index + '(' + page.scrapeID + ')');
+      });
+      await asyncForEach(fiziaPages, async (page, index) => {
+        await fiziaScraper(
+          page.link,
+          page.scrapeID,
+          page.imgNumber,
+          page.category
+        );
+        console.log('Page ' + index + '(' + page.scrapeID + ')');
+      });
+      await asyncForEach(ikeaPages, async (page, index) => {
+        await ikeaScraper(page.link, page.scrapeID);
+        console.log('Page ' + index + '(' + page.scrapeID + ')');
+      });
+      await asyncForEach(meraPages, async (page, index) => {
+        await meraScraper(page.link, page.scrapeID, page.deepLevel);
+        console.log('Page ' + index + '(' + page.scrapeID + ')');
+      });
+      await projektwScraper(
+        projektW.link,
+        projektW.scrapeID,
+        projektW.category
+      );
+      await asyncForEach(homeConceptPages, async (page, index) => {
+        await homeConceptScraper(
+          page.link,
+          page.scrapeID,
+          page.category
+        );
+        console.log('Page ' + index + '(' + page.scrapeID + ')');
+      });
     });
+    //REFRESH
+    schedule.scheduleJob(refreshRule, async () => {
+      console.log('(Refresh) Data scraping time: ' + new Date());
+      await Product.collection.drop();
+      await asyncForEach(ikeaPages, async (page, index) => {
+        await ikeaScraper(page.link, page.scrapeID);
+        console.log('Page ' + index + '(' + page.scrapeID + ')');
+      });
+      await asyncForEach(meraPages, async (page, index) => {
+        await meraScraper(page.link, page.scrapeID, page.deepLevel);
+        console.log('Page ' + index + '(' + page.scrapeID + ')');
+      });
+    });
+    //TESTING PART
     // (async () => {
     //   await asyncForEach(meraPages, async (page, index) => {
     //     await meraScraper(page.link, page.scrapeID, page.deepLevel);
