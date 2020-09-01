@@ -33,8 +33,6 @@ const scraper = async (scrapeLink, scrapeID, cat) => {
       category,
     };
 
-    console.log(pageData);
-
     pageData = {
       ...pageData,
       filename:

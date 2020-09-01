@@ -420,7 +420,8 @@ mongoose
 
     // SCHEDULE OPTIONS
     const rule = '0 0 2 * * 1,3,5,7';
-    const refreshRule = '0 0 4 1 * *';
+    const productsDropRule = '0 0 4 2 * *';
+    const productsRefreshRule = '0 30 4 2 * *';
 
     // SCRAPERS
     // UPDATE
@@ -465,10 +466,14 @@ mongoose
         console.log('Page ' + index + '(' + page.scrapeID + ')');
       });
     });
-    //REFRESH
-    schedule.scheduleJob(refreshRule, async () => {
-      console.log('(Refresh) Data scraping time: ' + new Date());
+    //PRODUCTS DROP
+    schedule.scheduleJob(productsDropRule, async () => {
+      console.log('Products Collection Drop: ' + new Date());
       await Product.collection.drop();
+    });
+    //PRODUCTS REFRESH
+    schedule.scheduleJob(productsRefreshRule, async () => {
+      console.log('(Refreshing) Data scraping time: ' + new Date());
       await asyncForEach(ikeaPages, async (page, index) => {
         await ikeaScraper(page.link, page.scrapeID);
         console.log('Page ' + index + '(' + page.scrapeID + ')');
@@ -478,7 +483,6 @@ mongoose
         console.log('Page ' + index + '(' + page.scrapeID + ')');
       });
     });
-
     //TESTING PART
     // (async () => {
     //   console.log('(Testing) Data scraping time: ' + new Date());

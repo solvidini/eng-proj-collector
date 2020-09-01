@@ -33,8 +33,6 @@ const scraper = async (scrapeLink, scrapeID, cat) => {
       category,
     };
 
-    console.log(pageData);
-
     await uploadService(pageData, scrapeID);
     console.log(`Successfully scrapped ${scrapeID} service.`);
   } catch (err) {
