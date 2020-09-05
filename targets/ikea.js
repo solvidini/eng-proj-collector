@@ -14,34 +14,50 @@ const scraper = async (scrapeLink, scrapeID) => {
 
     await page.waitFor(5000);
 
+    try {
+      for (let i = 0; i < 70; i++) {
+        await page.evaluate(() => {
+          document
+            .querySelector(
+              'body > div.plp-page-container > div > div > div.plp-main-container.plp-main-container > div > div > div.catalog-bottom-container > div.pagination.pagination--center > button'
+            )
+            .click();
+        });
+        await page.waitFor(200);
+      }
+    } catch (err) {
+      console.log('Products end.');
+    }
+
     let pageData =
       (await page.evaluate(() => {
         window.scrollTo(0, document.body.scrollHeight);
         let data = [];
 
         const nodeList = document.querySelectorAll(
-          '.catalog-product-list__fragment'
+          'div.plp-product-list__fragment'
         );
 
         nodeList.forEach((node) => {
           const company = 'ikea';
           const category = document.querySelector(
-            '.range-page-title__title'
+            '.plp-page-title__title'
           ).textContent;
-          const title = node.querySelector('.product-compact__name')
-            .textContent;
-          let description = node.querySelector('.product-compact__type')
-            .textContent;
+          const title = node.querySelector(
+            '.range-revamp-header-section__title--small'
+          ).textContent;
+          let description = node.querySelector(
+            '.range-revamp-header-section__description'
+          ).textContent;
           let additionalDescription = node.querySelector(
-            '.product-compact__gpr-disclaimer'
+            '.range-revamp-compact-price-package__variations-disclaimer'
           );
           if (additionalDescription) {
             description +=
               ' (' + additionalDescription.textContent + ')';
           }
-          const price = node.querySelector(
-            '.product-compact__price > span'
-          ).textContent;
+          let price = node.querySelector('.range-revamp-price')
+            .textContent;
           const uri = node.querySelector('img').getAttribute('src');
           const reference = node
             .querySelector('a')
@@ -65,7 +81,9 @@ const scraper = async (scrapeLink, scrapeID) => {
         ...element,
         scrapeID: scrapeID,
         filename:
-          scrapeID.toLocaleLowerCase().replace(/\s+/g, '-') + '-' + uuid.v4(),
+          scrapeID.toLocaleLowerCase().replace(/\s+/g, '-') +
+          '-' +
+          uuid.v4(),
         description: element.description.replace(/\s\s+/g, ''),
       };
     });

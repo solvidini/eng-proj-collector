@@ -14,6 +14,7 @@ const elmaxScraper = require('./targets/elmax');
 const homeConceptScraper = require('./targets/homeConcept');
 
 const Product = require('./models/product');
+const removeSpecProducts = require('./utils/removeSpecProducts');
 
 const app = express();
 
@@ -36,138 +37,138 @@ mongoose
     const ikeaPages = [
       {
         link:
-          'https://www.ikea.com/pl/pl/cat/fotele-i-szezlongi-fu006/?page=12',
+          'https://www.ikea.com/pl/pl/cat/fotele-i-szezlongi-fu006/',
         scrapeID: 'Ikea Fotele i Szezlongi',
       },
       {
-        link: 'https://www.ikea.com/pl/pl/cat/szafy-19053/?page=13',
+        link: 'https://www.ikea.com/pl/pl/cat/szafy-19053/',
         scrapeID: 'Ikea Szafy',
       },
       {
-        link: 'https://www.ikea.com/pl/pl/cat/meble-rtv-10475/?page=13',
+        link: 'https://www.ikea.com/pl/pl/cat/meble-rtv-10475/',
         scrapeID: 'Ikea Meble RTV',
       },
       {
-        link: 'https://www.ikea.com/pl/pl/cat/lozka-bm003/?page=13',
+        link: 'https://www.ikea.com/pl/pl/cat/lozka-bm003/',
         scrapeID: 'Ikea Lozka',
       },
       {
         link:
-          'https://www.ikea.com/pl/pl/cat/biblioteczki-i-regaly-st002/?page=14',
+          'https://www.ikea.com/pl/pl/cat/biblioteczki-i-regaly-st002/',
         scrapeID: 'Ikea Biblioteczki i Regaly',
       },
       {
         link:
-          'https://www.ikea.com/pl/pl/cat/komody-i-kontenerki-st004/?page=12',
+          'https://www.ikea.com/pl/pl/cat/komody-i-kontenerki-st004/',
         scrapeID: 'Ikea Komody i Kontenerki',
       },
       {
         link:
-          'https://www.ikea.com/pl/pl/cat/kredensy-bufety-i-konsole-30454/?page=12',
+          'https://www.ikea.com/pl/pl/cat/kredensy-bufety-i-konsole-30454/',
         scrapeID: 'Ikea Kredensy Bufety i Konsole',
       },
       {
-        link: 'https://www.ikea.com/pl/pl/cat/krzesla-fu002/?page=12',
+        link: 'https://www.ikea.com/pl/pl/cat/krzesla-fu002/',
         scrapeID: 'Ikea Krzesla',
       },
       {
         link:
-          'https://www.ikea.com/pl/pl/cat/meble-dla-dzieci-18767/?page=12',
+          'https://www.ikea.com/pl/pl/cat/meble-dla-dzieci-18767/',
         scrapeID: 'Ikea Meble Dla Dzieci',
       },
       {
         link:
-          'https://www.ikea.com/pl/pl/cat/meble-ogrodowe-i-na-balkon-od003/?page=12',
+          'https://www.ikea.com/pl/pl/cat/meble-ogrodowe-i-na-balkon-od003/',
         scrapeID: 'Ikea Ogrodowe i Na Balkon',
       },
       {
         link:
-          'https://www.ikea.com/pl/pl/cat/sofy-i-fotele-fu003/?page=12',
+          'https://www.ikea.com/pl/pl/cat/sofy-i-fotele-fu003/',
         scrapeID: 'Ikea Sofy i Fotele',
       },
       {
         link:
-          'https://www.ikea.com/pl/pl/cat/stoly-i-biurka-fu004/?page=12',
+          'https://www.ikea.com/pl/pl/cat/stoly-i-biurka-fu004/',
         scrapeID: 'Ikea Stoly i Biurka',
       },
       {
         link:
-          'https://www.ikea.com/pl/pl/cat/stoly-i-stolki-barowe-16244/?page=12',
+          'https://www.ikea.com/pl/pl/cat/stoly-i-stolki-barowe-16244/',
         scrapeID: 'Ikea Szafki i Witryny',
       },
       {
         link:
-          'https://www.ikea.com/pl/pl/cat/wozki-kuchenne-i-lazienkowe-fu005/?page=3',
+          'https://www.ikea.com/pl/pl/cat/wozki-kuchenne-i-lazienkowe-fu005/',
         scrapeID: 'Ikea Wozki Kuchenne i Lazienkowe',
       },
       {
         link:
-          'https://www.ikea.com/pl/pl/cat/akcesoria-lazienkowe-10555/?page=12',
+          'https://www.ikea.com/pl/pl/cat/akcesoria-lazienkowe-10555/',
         scrapeID: 'Ikea Akcesoria Lazienkowe',
       },
       {
         link:
-          'https://www.ikea.com/pl/pl/cat/baterie-lazienkowe-20724/?page=2',
+          'https://www.ikea.com/pl/pl/cat/baterie-lazienkowe-20724/',
         scrapeID: 'Ikea Baterie Lazienkowe',
       },
       {
         link:
-          'https://www.ikea.com/pl/pl/cat/lustra-do-lazienki-20490/?page=5',
+          'https://www.ikea.com/pl/pl/cat/lustra-do-lazienki-20490/',
         scrapeID: 'Ikea Lustra Do Lazienki',
       },
       {
         link:
-          'https://www.ikea.com/pl/pl/cat/oswietlenie-lazienkowe-10736/?page=5',
+          'https://www.ikea.com/pl/pl/cat/oswietlenie-lazienkowe-10736/',
         scrapeID: 'Ikea Oswietlenie Lazienkowe',
       },
       {
-        link: 'https://www.ikea.com/pl/pl/cat/prysznice-40690/?page=5',
+        link: 'https://www.ikea.com/pl/pl/cat/prysznice-40690/',
         scrapeID: 'Ikea Prysznice',
       },
       {
         link:
-          'https://www.ikea.com/pl/pl/cat/toaletki-lazienkowe-20719/?page=5',
+          'https://www.ikea.com/pl/pl/cat/toaletki-lazienkowe-20719/',
         scrapeID: 'Ikea Toaletki Lazienkowe',
       },
       {
-        link: 'https://www.ikea.com/pl/pl/cat/umywalki-20723/?page=5',
+        link: 'https://www.ikea.com/pl/pl/cat/umywalki-20723/',
         scrapeID: 'Ikea Umywalki',
       },
       {
         link:
-          'https://www.ikea.com/pl/pl/cat/dywaniki-i-maty-lazienkowe-20519/?page=5',
+          'https://www.ikea.com/pl/pl/cat/dywaniki-i-maty-lazienkowe-20519/',
         scrapeID: 'Ikea Dywaniki i Maty Lazienkowe',
       },
       {
-        link: 'https://www.ikea.com/pl/pl/cat/dywany-10653/?page=5',
+        link: 'https://www.ikea.com/pl/pl/cat/dywany-10653/',
         scrapeID: 'Ikea Dywany',
       },
       {
-        link: 'https://www.ikea.com/pl/pl/cat/dywany-10653/?page=5',
+        link: 'https://www.ikea.com/pl/pl/cat/dywany-10653/',
         scrapeID: 'Ikea Dywany',
       },
       {
         link:
-          'https://www.ikea.com/pl/pl/cat/wycieraczki-pod-drzwi-10698/?page=2',
+          'https://www.ikea.com/pl/pl/cat/wycieraczki-pod-drzwi-10698/',
         scrapeID: 'Ikea Wycieraczki Pod Drzwi',
       },
       {
         link:
-          'https://www.ikea.com/pl/pl/cat/inteligentny-dom-he002/?page=7',
+          'https://www.ikea.com/pl/pl/cat/inteligentny-dom-he002/',
         scrapeID: 'Ikea Inteligentny Dom',
       },
       {
         link:
-          'https://www.ikea.com/pl/pl/cat/przewody-i-ladowarki-40845/?page=7',
+          'https://www.ikea.com/pl/pl/cat/przewody-i-ladowarki-40845/',
         scrapeID: 'Ikea Przewody i Ladowarki',
       },
       {
-        link: 'https://www.ikea.com/pl/pl/cat/piekarniki-20810/?page=2',
+        link: 'https://www.ikea.com/pl/pl/cat/piekarniki-20810/',
         scrapeID: 'Ikea Piekarniki',
       },
       {
         link:
-          'https://www.ikea.com/pl/pl/cat/plyty-kuchenne-20812/?page=2',
+          'https://www.ikea.com/pl/pl/cat/plyty-kuchenne-20812/',
         scrapeID: 'Ikea Plyty Kuchenne',
       },
       {
@@ -176,36 +177,36 @@ mongoose
       },
       {
         link:
-          'https://www.ikea.com/pl/pl/cat/zmywarki-do-naczyn-20825/?page=2',
+          'https://www.ikea.com/pl/pl/cat/zmywarki-do-naczyn-20825/',
         scrapeID: 'Ikea Zmywarki Do Naczyn',
       },
       {
         link:
-          'https://www.ikea.com/pl/pl/cat/okapy-kuchenne-i-wyciagi-20819/?page=2',
+          'https://www.ikea.com/pl/pl/cat/okapy-kuchenne-i-wyciagi-20819/',
         scrapeID: 'Ikea Okapy Kuchenne i Wyciagi',
       },
       {
         link:
-          'https://www.ikea.com/pl/pl/cat/kuchenki-mikrofalowe-i-kombi-20815/?page=2',
+          'https://www.ikea.com/pl/pl/cat/kuchenki-mikrofalowe-i-kombi-20815/',
         scrapeID: 'Ikea Kuchenki Mikrofalowe i Kombi',
       },
       {
         link:
-          'https://www.ikea.com/pl/pl/cat/zarowki-led-10744/?page=2',
+          'https://www.ikea.com/pl/pl/cat/zarowki-led-10744/',
         scrapeID: 'Ikea Zarowki LED',
       },
       {
-        link: 'https://www.ikea.com/pl/pl/cat/lampy-li002/?page=15',
+        link: 'https://www.ikea.com/pl/pl/cat/lampy-li002/',
         scrapeID: 'Ikea Lampy',
       },
       {
         link:
-          'https://www.ikea.com/pl/pl/cat/suszarki-na-pranie-20602/?page=2',
+          'https://www.ikea.com/pl/pl/cat/suszarki-na-pranie-20602/',
         scrapeID: 'Ikea Suszarki Na Pranie',
       },
       {
         link:
-          'https://www.ikea.com/pl/pl/cat/deski-do-prasowania-20608/?page=2',
+          'https://www.ikea.com/pl/pl/cat/deski-do-prasowania-20608/',
         scrapeID: 'Ikea Deski Do Prasowania',
       },
     ];
@@ -427,101 +428,64 @@ mongoose
     // UPDATE
     schedule.scheduleJob(rule, async () => {
       console.log('Data scraping time: ' + new Date());
-      await asyncForEach(homeConceptPages, async (page, index) => {
-        await homeConceptScraper(
-          page.link,
-          page.scrapeID,
-          page.category
-        );
-        console.log('Page ' + index + '(' + page.scrapeID + ')');
-      });
-      await asyncForEach(fiziaPages, async (page, index) => {
-        await fiziaScraper(
-          page.link,
-          page.scrapeID,
-          page.imgNumber,
-          page.category
-        );
-        console.log('Page ' + index + '(' + page.scrapeID + ')');
-      });
-      await asyncForEach(ikeaPages, async (page, index) => {
-        await ikeaScraper(page.link, page.scrapeID);
-        console.log('Page ' + index + '(' + page.scrapeID + ')');
-      });
-      await asyncForEach(meraPages, async (page, index) => {
-        await meraScraper(page.link, page.scrapeID, page.deepLevel);
-        console.log('Page ' + index + '(' + page.scrapeID + ')');
-      });
-      await projektwScraper(
-        projektW.link,
-        projektW.scrapeID,
-        projektW.category
-      );
-      await asyncForEach(homeConceptPages, async (page, index) => {
-        await homeConceptScraper(
-          page.link,
-          page.scrapeID,
-          page.category
-        );
-        console.log('Page ' + index + '(' + page.scrapeID + ')');
-      });
+      //   await asyncForEach(homeConceptPages, async (page, index) => {
+      //     await homeConceptScraper(
+      //       page.link,
+      //       page.scrapeID,
+      //       page.category
+      //     );
+      //     console.log('Page ' + index + '(' + page.scrapeID + ')');
+      //   });
+      //   await asyncForEach(fiziaPages, async (page, index) => {
+      //     await fiziaScraper(
+      //       page.link,
+      //       page.scrapeID,
+      //       page.imgNumber,
+      //       page.category
+      //     );
+      //     console.log('Page ' + index + '(' + page.scrapeID + ')');
+      //   });
+      //   await asyncForEach(ikeaPages, async (page, index) => {
+      //     await ikeaScraper(page.link, page.scrapeID);
+      //     console.log('Page ' + index + '(' + page.scrapeID + ')');
+      //   });
+      //   await asyncForEach(meraPages, async (page, index) => {
+      //     await meraScraper(page.link, page.scrapeID, page.deepLevel);
+      //     console.log('Page ' + index + '(' + page.scrapeID + ')');
+      //   });
+      //   await projektwScraper(
+      //     projektW.link,
+      //     projektW.scrapeID,
+      //     projektW.category
+      //   );
+      //   await asyncForEach(homeConceptPages, async (page, index) => {
+      //     await homeConceptScraper(
+      //       page.link,
+      //       page.scrapeID,
+      //       page.category
+      //     );
+      //     console.log('Page ' + index + '(' + page.scrapeID + ')');
+      //   });
     });
-    //PRODUCTS DROP
-    schedule.scheduleJob(productsDropRule, async () => {
-      console.log('Products Collection Drop: ' + new Date());
-      await Product.collection.drop();
-    });
-    //PRODUCTS REFRESH
+    // //PRODUCTS REFRESH
     schedule.scheduleJob(productsRefreshRule, async () => {
       console.log('(Refreshing) Data scraping time: ' + new Date());
-      await asyncForEach(ikeaPages, async (page, index) => {
-        await ikeaScraper(page.link, page.scrapeID);
-        console.log('Page ' + index + '(' + page.scrapeID + ')');
-      });
-      await asyncForEach(meraPages, async (page, index) => {
-        await meraScraper(page.link, page.scrapeID, page.deepLevel);
-        console.log('Page ' + index + '(' + page.scrapeID + ')');
-      });
+      // await Product.collection.drop();
+      //   await asyncForEach(ikeaPages, async (page, index) => {
+      //     await ikeaScraper(page.link, page.scrapeID);
+      //     console.log('Page ' + index + '(' + page.scrapeID + ')');
+      //   });
+      //   await asyncForEach(meraPages, async (page, index) => {
+      //     await meraScraper(page.link, page.scrapeID, page.deepLevel);
+      //     console.log('Page ' + index + '(' + page.scrapeID + ')');
+      //   });
     });
+
     //TESTING PART
     // (async () => {
     //   console.log('(Testing) Data scraping time: ' + new Date());
-    //   await asyncForEach(homeConceptPages, async (page, index) => {
-    //     await homeConceptScraper(
-    //       page.link,
-    //       page.scrapeID,
-    //       page.category
-    //     );
-    //     console.log('Page ' + index + '(' + page.scrapeID + ')');
-    //   });
-    //   await asyncForEach(fiziaPages, async (page, index) => {
-    //     await fiziaScraper(
-    //       page.link,
-    //       page.scrapeID,
-    //       page.imgNumber,
-    //       page.category
-    //     );
-    //     console.log('Page ' + index + '(' + page.scrapeID + ')');
-    //   });
     //   await asyncForEach(ikeaPages, async (page, index) => {
     //     await ikeaScraper(page.link, page.scrapeID);
-    //     console.log('Page ' + index + '(' + page.scrapeID + ')');
-    //   });
-    //   await asyncForEach(meraPages, async (page, index) => {
-    //     await meraScraper(page.link, page.scrapeID, page.deepLevel);
-    //     console.log('Page ' + index + '(' + page.scrapeID + ')');
-    //   });
-    //   await projektwScraper(
-    //     projektW.link,
-    //     projektW.scrapeID,
-    //     projektW.category
-    //   );
-    //   await asyncForEach(homeConceptPages, async (page, index) => {
-    //     await homeConceptScraper(
-    //       page.link,
-    //       page.scrapeID,
-    //       page.category
-    //     );
     //     console.log('Page ' + index + '(' + page.scrapeID + ')');
     //   });
     // })();

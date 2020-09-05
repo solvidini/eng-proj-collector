@@ -1,0 +1,18 @@
+Connected to database.
+(Testing) Data scraping time: Sat Sep 05 2020 13:34:14 GMT+0200 (Central European Summer Time)
+Products end.
+Number of new products of Ikea Fotele i Szezlongi to upload:  0
+Successfully scrapped Ikea Fotele i Szezlongi products.
+Page 0(Ikea Fotele i Szezlongi)
+Products end.
+Number of new products of Ikea Szafy to upload:  97
+Successfully scrapped Ikea Szafy products.
+Page 1(Ikea Szafy)
+Products end.
+Number of new products of Ikea Meble RTV to upload:  25
+Successfully scrapped Ikea Meble RTV products.
+Page 2(Ikea Meble RTV)
+Products end.
+Number of new products of Ikea Lozka to upload:  264
+Successfully scrapped Ikea Lozka products.
+Page 3(Ikea Lozka)
