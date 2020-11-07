@@ -197,10 +197,6 @@ const meraPages = [
       scrapeID: 'Mera Mozaiki',
    },
    {
-      link: 'https://mera.eu/kategorie-produktow/mozaiki-dekoracje-2/',
-      scrapeID: 'Mera Mozaiki',
-   },
-   {
       link: 'https://mera.eu/kategorie-produktow/wiszace-dekoracyjne/',
       scrapeID: 'Mera Lampy Wiszace',
    },

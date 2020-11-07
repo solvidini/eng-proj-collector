@@ -39,8 +39,12 @@ const scraper = async (scrapeLink, scrapeID, scrollDownQuantity = 6) => {
             );
             nodeList.forEach((node) => {
                const company = 'mera';
-               const category = node.querySelector('.c-tile__text--label-details').textContent;
-               const title = node.querySelector('.c-tile__text--sku').textContent;
+               const category = node.querySelector('.c-tile__text--label-details')
+                  ? node.querySelector('.c-tile__text--label-details').textContent
+                  : '';
+               const title = node.querySelector('.c-tile__text--sku')
+                  ? node.querySelector('.c-tile__text--sku').textContent
+                  : '';
                let description = node.querySelector('.c-tile__text--dimensions')
                   ? node.querySelector('.c-tile__text--dimensions').textContent
                   : '';
@@ -48,10 +52,10 @@ const scraper = async (scrapeLink, scrapeID, scrollDownQuantity = 6) => {
                let price = node.querySelector('.c-tile__text--price-bright')
                   ? node.querySelector('.c-tile__text--price-bright').textContent.slice(0, -2)
                   : '';
-               const uri = node.querySelector('img') ? node.querySelector('img').src : '';
-               const reference = node.querySelector('a').href;
+               const uri = node.querySelector('img') ? node.querySelector('.c-tile__image').src : '';
+               const reference = node.querySelector('a') ? node.querySelector('a').href : '';
 
-               if (uri.length > 0) {
+               if (uri.length > 0 && reference.length > 0 && title.length > 0) {
                   data.push({ title, uri, company, category, description, price, reference });
                }
             });
@@ -67,7 +71,6 @@ const scraper = async (scrapeLink, scrapeID, scrollDownQuantity = 6) => {
             description: element.description.replace(/\s\s+/g, ' '),
          };
       });
-      console.log(pageData);
       await uploadProducts(pageData, scrapeID);
       console.log(`Successfully scrapped ${scrapeID} products.`);
       await browser.close();

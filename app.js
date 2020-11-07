@@ -99,7 +99,7 @@ mongoose
             await ikeaScraper(page.link, page.scrapeID);
             console.log('Page ' + index + '(' + page.scrapeID + ')');
          });
-         // await removeSpecProducts({scrapeID: /Mera/});
+         // await removeSpecProducts({uri: /svg/, company: 'mera'});
       })();
 
       app.listen(process.env.PORT || 8101);
