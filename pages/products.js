@@ -153,134 +153,130 @@ const ikeaPages = [
 // MERA
 const meraPages = [
    {
-      link: 'https://mera.eu/lampy/lampy-wiszace/',
-      scrapeID: 'Mera Lampy Wiszace',
-      deepLevel: 3,
+      link: 'https://mera.eu/kategorie-produktow/plytki-lazienkowe/',
+      scrapeID: 'Mera Plytki Lazienkowe',
    },
    {
-      link: 'https://mera.eu/lampy/lampy-stojace/',
-      scrapeID: 'Mera Lampy Stojace',
-      deepLevel: 3,
+      link: 'https://mera.eu/kategorie-produktow/plytki-tarasowe/',
+      scrapeID: 'Mera Plytki Tarasowe',
    },
    {
-      link: 'https://mera.eu/dekoracje/lustra/',
-      scrapeID: 'Mera Lustra',
-      deepLevel: 3,
+      link: 'https://mera.eu/kategorie-produktow/plytki-podlogowe/',
+      scrapeID: 'Mera Plytki Podlogowe',
    },
    {
-      link: 'https://mera.eu/dekoracje/beton-architektoniczny/',
-      scrapeID: 'Mera Beton Architektoniczny',
-      deepLevel: 3,
+      link: 'https://mera.eu/kategorie-produktow/plytki-scienne/',
+      scrapeID: 'Mera Plytki Scienne',
    },
    {
-      link: 'https://mera.eu/dekoracje/stiuki/',
-      scrapeID: 'Mera Tynki Dekoracyjne',
-      deepLevel: 3,
+      link: 'https://mera.eu/kategorie-produktow/plytki-wielkoformatowe/',
+      scrapeID: 'Mera Plytki Wielkoformatowe',
    },
    {
-      link: 'https://mera.eu/dekoracje/mozaiki/',
+      link: 'https://mera.eu/kategorie-produktow/plytki-drewnopodobne/',
+      scrapeID: 'Mera Plytki Drewnopodobne',
+   },
+   {
+      link: 'https://mera.eu/kategorie-produktow/plytki-imitujace-kamien/',
+      scrapeID: 'Mera Plytki Imitujace Kamien',
+   },
+   {
+      link: 'https://mera.eu/kategorie-produktow/plytki-imitujace-beton/',
+      scrapeID: 'Mera Plytki Imitujace Beton',
+   },
+   {
+      link: 'https://mera.eu/kategorie-produktow/plytki-heksagonalne/',
+      scrapeID: 'Mera Plytki Heksagonalne',
+   },
+   {
+      link: 'https://mera.eu/kategorie-produktow/plytki-orientalne/',
+      scrapeID: 'Mera Plytki Orientalne',
+   },
+   {
+      link: 'https://mera.eu/kategorie-produktow/mozaiki-dekoracje-2/',
       scrapeID: 'Mera Mozaiki',
-      deepLevel: 3,
    },
    {
-      link: 'https://mera.eu/dekoracje/sztukateria/',
-      scrapeID: 'Mera Sztukateria',
-      deepLevel: 3,
+      link: 'https://mera.eu/kategorie-produktow/mozaiki-dekoracje-2/',
+      scrapeID: 'Mera Mozaiki',
    },
    {
-      link: 'https://mera.eu/dekoracje/okadziny-naturalne/',
-      scrapeID: 'Mera Okladziny Naturalne',
-      deepLevel: 3,
+      link: 'https://mera.eu/kategorie-produktow/wiszace-dekoracyjne/',
+      scrapeID: 'Mera Lampy Wiszace',
    },
    {
-      link: 'https://mera.eu/lazienki/toalety-myjace/',
-      scrapeID: 'Mera Toalety Myjace',
-      deepLevel: 3,
+      link: 'https://mera.eu/kategorie-produktow/wyposazenie-lazienek/',
+      scrapeID: 'Mera Wyposazenie Lazienek',
    },
    {
-      link: 'https://mera.eu/lazienki/armatura-lazienkowa/deszczownice/',
-      scrapeID: 'Mera Deszczownice',
-      deepLevel: 4,
+      link: 'https://mera.eu/kategorie-produktow/kabiny-prysznicowe/',
+      scrapeID: 'Mera Kabiny Prysznicowe',
    },
    {
-      link: 'https://mera.eu/lazienki/ceramika-lazienkowa/umywalki-nablatowe/',
-      scrapeID: 'Mera Umywalki Nablatowe',
-      deepLevel: 4,
+      link: 'https://mera.eu/kategorie-produktow/meble-lazienkowe/',
+      scrapeID: 'Mera Meble Lazienkowe',
    },
    {
-      link: 'https://mera.eu/lazienki/ceramika-lazienkowa/miski-wc-wiszace/',
-      scrapeID: 'Mera Miski WC Wiszace',
-      deepLevel: 4,
-   },
-   {
-      link: 'https://mera.eu/lazienki/ceramika-lazienkowa/bidety-wiszace/',
-      scrapeID: 'Mera Bidety Wiszace',
-      deepLevel: 4,
-   },
-   {
-      link: 'https://mera.eu/meble/salon/fotele/fotele/',
-      scrapeID: 'Mera Fotele',
-      deepLevel: 4,
-   },
-   {
-      link: 'https://mera.eu/meble/salon/fotele/krzesla/',
-      scrapeID: 'Mera Krzesla',
-      deepLevel: 5,
-   },
-   {
-      link: 'https://mera.eu/meble/salon/fotele/pufy/',
-      scrapeID: 'Mera Pufy',
-      deepLevel: 5,
-   },
-   {
-      link: 'https://mera.eu/meble/sypialnie/lozka/tapicerowane/',
-      scrapeID: 'Mera Lozka Tapicerowane',
-      deepLevel: 4,
-   },
-   {
-      link: 'https://mera.eu/meble/sypialnie/lozka/kontynentalne/',
-      scrapeID: 'Mera Lozka Kontynentalne',
-      deepLevel: 4,
-   },
-   {
-      link: 'https://mera.eu/meble/sypialnie/lozka/drewniane/',
-      scrapeID: 'Mera Lozka Drewniane',
-      deepLevel: 4,
-   },
-   {
-      link: 'https://mera.eu/meble/sypialnie/materace/',
-      scrapeID: 'Mera Materace',
-      deepLevel: 4,
-   },
-   {
-      link: 'https://mera.eu/meble/kuchnie/',
-      scrapeID: 'Mera Kuchnia',
-      deepLevel: 3,
-   },
-   {
-      link: 'https://mera.eu/meble/salon/komody/',
-      scrapeID: 'Mera Komody',
-      deepLevel: 4,
-   },
-   {
-      link: 'https://mera.eu/meble/salon/narozniki/',
+      link: 'https://mera.eu/kategorie-produktow/narozniki/',
       scrapeID: 'Mera Narozniki',
-      deepLevel: 4,
    },
    {
-      link: 'https://mera.eu/meble/salon/sofy/',
-      scrapeID: 'Mera Sofy',
-      deepLevel: 4,
+      link: 'https://mera.eu/kategorie-produktow/grzejniki/',
+      scrapeID: 'Mera Grzejniki',
    },
    {
-      link: 'https://mera.eu/dekoracje/lustra/',
-      scrapeID: 'Mera Lustra',
-      deepLevel: 3,
+      link: 'https://mera.eu/kategorie-produktow/armatura/',
+      scrapeID: 'Mera Armatura',
+      scrollDownQuantity: 20
    },
    {
-      link: 'https://mera.eu/lampy/lampy-stolowe/',
-      scrapeID: 'Mera Lampy Stolowe',
-      deepLevel: 3,
+      link: 'https://mera.eu/kategorie-produktow/lozka/',
+      scrapeID: 'Mera Lozka',
+   },
+   {
+      link: 'https://mera.eu/kategorie-produktow/komody-toaletki/',
+      scrapeID: 'Mera Komody Toaletki',
+   },
+   {
+      link: 'https://mera.eu/kategorie-produktow/materace/',
+      scrapeID: 'Mera Materace',
+   },
+   {
+      link: 'https://mera.eu/kategorie-produktow/fotele/',
+      scrapeID: 'Mera Fotele',
+   },
+   {
+      link: 'https://mera.eu/kategorie-produktow/lawy-stoliki/',
+      scrapeID: 'Mera Lawy Stoliki',
+   },
+   {
+      link: 'https://mera.eu/kategorie-produktow/lampy/',
+      scrapeID: 'Mera Lampy',
+      scrollDownQuantity: 12,
+   },
+   {
+      link: 'https://mera.eu/kategorie-produktow/parasole-ogrodowe/',
+      scrapeID: 'Mera Parasole Ogrodowe',
+   },
+   {
+      link: 'https://mera.eu/kategorie-produktow/donice-ogrodowe/',
+      scrapeID: 'Mera Donice Ogrodowe',
+   },
+   {
+      link: 'https://mera.eu/kategorie-produktow/krzesla-i-fotele-ogrodowe/',
+      scrapeID: 'Mera Krzesla Fotele Ogrodowe',
+   },
+   {
+      link: 'https://mera.eu/kategorie-produktow/krzesla-i-fotele-ogrodowe/',
+      scrapeID: 'Mera Krzesla Fotele Ogrodowe',
+   },
+   {
+      link: 'https://mera.eu/kategorie-produktow/lezaki-i-lezanki-ogrodowe/',
+      scrapeID: 'Mera Lezaki Lezanki Ogrodowe',
+   },
+   {
+      link: 'https://mera.eu/kategorie-produktow/stoly-ogrodowe//',
+      scrapeID: 'Mera Stoly Ogrodowe',
    },
 ];
 

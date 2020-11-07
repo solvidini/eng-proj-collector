@@ -4,79 +4,81 @@ const uuid = require('uuid');
 const uploadProducts = require('../utils/uploadProducts');
 const errorHandler = require('../utils/errorHandler');
 
-const scraper = async (
-  scrapeLink,
-  scrapeID,
-  deepLevel = 3,
-  scrollDownQuantity = 6
-) => {
-  try {
-    let page;
-    const browser = await puppeteer.launch(); // {headless: false}
+const scraper = async (scrapeLink, scrapeID, scrollDownQuantity = 6) => {
+   try {
+      let page;
+      const browser = await puppeteer.launch(); // {headless: false}
 
-    page = await browser.newPage();
-    await page.goto(scrapeLink, { waitUntil: 'networkidle2' });
+      page = await browser.newPage();
+      await page.goto(scrapeLink, { waitUntil: 'networkidle2' });
 
-    for (let j = 0; j < scrollDownQuantity; j++) {
-      await page.evaluate(() => {
-        window.scrollTo(
-          0,
-          document.querySelector('body > div.page > div.producer')
-            ? document.querySelector('body > div.page > div.producer')
-                .offsetTop -
-                document.querySelector('body > footer').offsetHeight
-            : 0
-        );
-      });
       await page.waitFor(3000);
-    }
 
-    let pageData =
-      (await page.evaluate((deepLevel) => {
-        window.scrollTo(0, document.body.scrollHeight);
-        let data = [];
+      for (let j = 0; j < scrollDownQuantity; j++) {
+         await page.evaluate(() => {
+            window.scrollTo(
+               0,
+               document.querySelector('body > div.p-product-category.p-product-category--bright')
+                  ? document.querySelector(
+                       'body > div.p-product-category.p-product-category--bright'
+                    ).clientHeight -
+                       document.querySelector('body > footer').offsetHeight / 2
+                  : 0
+            );
+         });
+         await page.waitFor(2000);
+      }
 
-        const nodeList = document.querySelector(
-          'body > div.page > div.tile.tile--bg-dark > div.tile__row.tile__row--tiles.floatfix'
-        ).childNodes;
+      let pageData =
+         (await page.evaluate(() => {
+            window.scrollTo(0, document.body.scrollHeight);
+            let data = [];
 
-        nodeList.forEach((node) => {
-          const company = 'mera';
-          const category = document.querySelector(
-            `body > div.breadcrumb > div > div.breadcrumb__row.breadcrumb__row--nav > a:nth-child(${deepLevel})`
-          ).textContent;
-          const title = node.querySelector('.tile__text').textContent;
-          let uri = node.querySelector('.img').getAttribute('style');
-          uri = uri.substring(23, uri.length - 3);
-          data.push({ title, uri, company, category });
-        });
+            const nodeList = document.querySelectorAll(
+               'div.col.col-12.col-sm-6.col-md-6.col-lg-3.col-xl-3'
+            );
+            nodeList.forEach((node) => {
+               const company = 'mera';
+               const category = node.querySelector('.c-tile__text--label-details').textContent;
+               const title = node.querySelector('.c-tile__text--sku').textContent;
+               let description = node.querySelector('.c-tile__text--dimensions')
+                  ? node.querySelector('.c-tile__text--dimensions').textContent
+                  : '';
+               description = description.replace(/ \|/, 'wymiary: ');
+               let price = node.querySelector('.c-tile__text--price-bright')
+                  ? node.querySelector('.c-tile__text--price-bright').textContent.slice(0, -2)
+                  : '';
+               const uri = node.querySelector('img') ? node.querySelector('img').src : '';
+               const reference = node.querySelector('a').href;
 
-        return data;
-      }, deepLevel)) || [];
+               if (uri.length > 0) {
+                  data.push({ title, uri, company, category, description, price, reference });
+               }
+            });
 
-    pageData = pageData.map((element) => {
-      return {
-        ...element,
-        scrapeID: scrapeID,
-        filename:
-          scrapeID.toLocaleLowerCase().replace(/\s+/g, '-') +
-          '-' +
-          uuid.v4(),
-        reference: scrapeLink,
-      };
-    });
+            return data;
+         })) || [];
 
-    await uploadProducts(pageData, scrapeID);
-    console.log(`Successfully scrapped ${scrapeID} products.`);
-    await browser.close();
-  } catch (err) {
-    if (!err.statusCode) {
-      err.statusCode = 500;
-    }
-    err.scrapeID = scrapeID;
-    err.type = 'products';
-    errorHandler(err);
-  }
+      pageData = pageData.map((element) => {
+         return {
+            ...element,
+            scrapeID: scrapeID,
+            filename: scrapeID.toLocaleLowerCase().replace(/\s+/g, '-') + '-' + uuid.v4(),
+            description: element.description.replace(/\s\s+/g, ' '),
+         };
+      });
+      console.log(pageData);
+      await uploadProducts(pageData, scrapeID);
+      console.log(`Successfully scrapped ${scrapeID} products.`);
+      await browser.close();
+   } catch (err) {
+      if (!err.statusCode) {
+         err.statusCode = 500;
+      }
+      err.scrapeID = scrapeID;
+      err.type = 'products';
+      errorHandler(err);
+   }
 };
 
 module.exports = scraper;

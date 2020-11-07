@@ -2,18 +2,21 @@ const clearImage = require('./utils.js').clearImage;
 
 const Product = require('../models/product');
 
+// removeBy = {scrapeID: /Mera/} f.e.
 module.exports = async (removeBy) => {
-  Product.find(removeBy)
-    .then((documents) => {
-      documents.forEach((document) => {
-        if (document.path) {
-          clearImage(document.path);
-        }
-        document.remove();
+   Product.find(removeBy)
+      .then((documents) => {
+         documents.forEach((document) => {
+            if (document.path) {
+               clearImage(document.path);
+            }
+            document.remove();
+         });
+         console.log('Products removed');
+      })
+      .catch((err) => {
+         if (err) {
+            console.log(err);
+         }
       });
-      console.log('Products removed');
-    })
-    .catch((err) => {
-      console.log(err);
-    });
 };

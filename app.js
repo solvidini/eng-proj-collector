@@ -44,22 +44,23 @@ mongoose
       // UPDATE
       schedule.scheduleJob(rule, async () => {
          console.log('Data scraping time: ' + new Date());
-         await asyncForEach(homeConceptPages, async (page, index) => {
-            await homeConceptScraper(page.link, page.scrapeID, page.category);
-            console.log('Page ' + index + '(' + page.scrapeID + ')');
-         });
-         await asyncForEach(fiziaPages, async (page, index) => {
-            await fiziaScraper(page.link, page.scrapeID, page.imgNumber, page.category);
-            console.log('Page ' + index + '(' + page.scrapeID + ')');
-         });
-         await asyncForEach(ikeaPages, async (page, index) => {
-            await ikeaScraper(page.link, page.scrapeID);
-            console.log('Page ' + index + '(' + page.scrapeID + ')');
-         });
-         await asyncForEach(meraPages, async (page, index) => {
-            await meraScraper(page.link, page.scrapeID, page.deepLevel);
-            console.log('Page ' + index + '(' + page.scrapeID + ')');
-         });
+
+         // await asyncForEach(homeConceptPages, async (page, index) => {
+         //    await homeConceptScraper(page.link, page.scrapeID, page.category);
+         //    console.log('Page ' + index + '(' + page.scrapeID + ')');
+         // });
+         // await asyncForEach(fiziaPages, async (page, index) => {
+         //    await fiziaScraper(page.link, page.scrapeID, page.imgNumber, page.category);
+         //    console.log('Page ' + index + '(' + page.scrapeID + ')');
+         // });
+         // await asyncForEach(ikeaPages, async (page, index) => {
+         //    await ikeaScraper(page.link, page.scrapeID);
+         //    console.log('Page ' + index + '(' + page.scrapeID + ')');
+         // });
+         // await asyncForEach(meraPages, async (page, index) => {
+         //    await meraScraper(page.link, page.scrapeID, page.deepLevel);
+         //    console.log('Page ' + index + '(' + page.scrapeID + ')');
+         // });
          //  await asyncForEach(homeConceptPages, async (page, index) => {
          //     await homeConceptScraper(page.link, page.scrapeID, page.category);
          //     console.log('Page ' + index + '(' + page.scrapeID + ')');
@@ -70,25 +71,36 @@ mongoose
       // PRODUCTS REFRESH
       schedule.scheduleJob(productsRefreshRule, async () => {
          console.log('(Refreshing) Data scraping time: ' + new Date());
-         await Product.collection.drop();
+
+         // await Product.collection.drop();?
+         // await asyncForEach(ikeaPages, async (page, index) => {
+         //    await ikeaScraper(page.link, page.scrapeID);
+         //    console.log('Page ' + index + '(' + page.scrapeID + ')');
+         // });
+         // await asyncForEach(meraPages, async (page, index) => {
+         //    await meraScraper(page.link, page.scrapeID, page.deepLevel);
+         //    console.log('Page ' + index + '(' + page.scrapeID + ')');
+         // });
+      });
+
+      // TESTING
+      (async () => {
+         console.log('(Testing) Data scraping time: ' + new Date());
+
+         await asyncForEach(meraPages, async (page, index) => {
+            if (page.scrollDownQuantity) {
+               await meraScraper(page.link, page.scrapeID, page.scrollDownQuantity);
+            } else {
+               await meraScraper(page.link, page.scrapeID);
+            }
+            console.log('Page ' + index + '(' + page.scrapeID + ')');
+         });
          await asyncForEach(ikeaPages, async (page, index) => {
             await ikeaScraper(page.link, page.scrapeID);
             console.log('Page ' + index + '(' + page.scrapeID + ')');
          });
-         await asyncForEach(meraPages, async (page, index) => {
-            await meraScraper(page.link, page.scrapeID, page.deepLevel);
-            console.log('Page ' + index + '(' + page.scrapeID + ')');
-         });
-      });
-
-      // TESTING
-      // (async () => {
-      //   console.log('(Testing) Data scraping time: ' + new Date());
-      //   await asyncForEach(ikeaPages, async (page, index) => {
-      //     await ikeaScraper(page.link, page.scrapeID);
-      //     console.log('Page ' + index + '(' + page.scrapeID + ')');
-      //   });
-      // })();
+         // await removeSpecProducts({scrapeID: /Mera/});
+      })();
 
       app.listen(process.env.PORT || 8101);
    })
