@@ -5,7 +5,7 @@ const Service = require('../models/service');
 const Error = require('../models/error');
 
 module.exports = async (pageData, scrapeID) => {
-  let downloadedImages; //
+  let downloadedImages = [];
   try {
     const exists = await Service.find({
       scrapeID: scrapeID,

@@ -2,7 +2,7 @@ const clearImage = require('./utils.js').clearImage;
 
 const Product = require('../models/product');
 
-// removeBy = {scrapeID: /Mera/} f.e.
+// removeBy = {scrapeID: /Mera/} / {uri: /svg/, company: 'mera'} f.e.
 module.exports = async (removeBy) => {
    Product.find(removeBy)
       .then((documents) => {
