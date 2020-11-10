@@ -4,13 +4,14 @@ const uuid = require('uuid');
 const uploadProducts = require('../utils/uploadProducts');
 const errorHandler = require('../utils/errorHandler');
 
-const scraper = async (scrapeLink, scrapeID) => {
+const scraper = async (pgData) => {
+   const { link, scrapeID } = pgData;
    try {
       let page;
       const browser = await puppeteer.launch();
 
       page = await browser.newPage();
-      await page.goto(scrapeLink, { waitUntil: 'networkidle2' });
+      await page.goto(link, { waitUntil: 'networkidle2' });
 
       await page.waitFor(5000);
 
@@ -77,7 +78,7 @@ const scraper = async (scrapeLink, scrapeID) => {
       pageData = pageData.map((element) => {
          return {
             ...element,
-            scrapeID: scrapeID,
+            scrapeID,
             filename: scrapeID.toLocaleLowerCase().replace(/\s+/g, '-') + '-' + uuid.v4(),
             description: element.description.replace(/\s\s+/g, ' '),
          };

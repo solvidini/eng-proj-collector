@@ -75,7 +75,15 @@ const elmax = {
    category: 'Usługa (Instalacje elektryczne)',
 };
 
+// Button
+const button = {
+   link: 'http://www.pracownia-button.pl/offer',
+   scrapeID: 'Button',
+   category: 'Usługa + Produkt (Wykonanie / Rekonstrukcja mebli tapicerowanych)',
+};
+
 exports.fiziaPages = fiziaPages;
 exports.homeConceptPages = homeConceptPages;
 exports.projektW = projektW;
 exports.elmax = elmax;
+exports.button = button;

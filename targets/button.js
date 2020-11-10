@@ -1,5 +1,6 @@
 const fetch = require('node-fetch');
 const cheerio = require('cheerio');
+const uuid = require('uuid');
 
 const uploadService = require('../utils/uploadService');
 const errorHandler = require('../utils/errorHandler');
@@ -16,20 +17,25 @@ const scraper = async (pgData) => {
       const $ = cheerio.load(html);
       let pageData;
 
-      const title = 'Wykonanie instalacji elektrycznych';
-      const description = $(
-         'body > table > tbody > tr > td:nth-child(2) > table > tbody > tr:nth-child(1) > td:nth-child(2) > table > tbody > tr:nth-child(3) > td > table > tbody > tr:nth-child(3) > td:nth-child(2) > table > tbody > tr > td > table > tbody > tr'
-      ).text();
-      const company = 'Elmax';
+      const title = 'Usługi tapicerskie';
+      const description = $('meta[name="description"]').attr('content');
+      const company = 'Button';
       const reference = link;
+      const uri = 'http://www.pracownia-button.pl' + $('.sidebar__logo').attr('src');
 
       pageData = {
          scrapeID,
          title,
          description,
+         uri,
          company,
          reference,
          category,
+      };
+
+      pageData = {
+         ...pageData,
+         filename: scrapeID.toLocaleLowerCase().replace(/\s+/g, '-') + '-' + uuid.v4(),
       };
 
       await uploadService(pageData, scrapeID);

@@ -15,10 +15,11 @@ const projektwScraper = require('./targets/projektW');
 const fiziaScraper = require('./targets/fizia');
 const elmaxScraper = require('./targets/elmax');
 const homeConceptScraper = require('./targets/homeConcept');
+const buttonScraper = require('./targets/button');
 
 // PAGES
 const { ikeaPages, meraPages } = require('./pages/products');
-const { elmax, fiziaPages, homeConceptPages, projektW } = require('./pages/services');
+const { elmax, fiziaPages, homeConceptPages, projektW, button } = require('./pages/services');
 
 const app = express();
 
@@ -45,31 +46,29 @@ mongoose
       schedule.scheduleJob(updateRule, async () => {
          console.log('Data scraping time: ' + new Date());
 
-         // await asyncForEach(meraPages, async (page, index) => {
-         //    if (page.scrollDownQuantity) {
-         //       await meraScraper(page.link, page.scrapeID, page.scrollDownQuantity);
-         //    } else {
-         //       await meraScraper(page.link, page.scrapeID);
-         //    }
-         //    console.log('Page ' + index + '(' + page.scrapeID + ')');
+         // await asyncForEach(meraPages, async (pageData, index) => {
+         //    await meraScraper(pageData);
+         //    console.log('Page ' + index + '(' + pageData.scrapeID + ')');
          // });
-         // await asyncForEach(ikeaPages, async (page, index) => {
-         //    await ikeaScraper(page.link, page.scrapeID);
-         //    console.log('Page ' + index + '(' + page.scrapeID + ')');
+
+         // await asyncForEach(ikeaPages, async (pageData, index) => {
+         //    await ikeaScraper(pageData);
+         //    console.log('Page ' + index + '(' + pageData.scrapeID + ')');
          // });
-         // await asyncForEach(homeConceptPages, async (page, index) => {
-         //    await homeConceptScraper(page.link, page.scrapeID, page.category);
-         //    console.log('Page ' + index + '(' + page.scrapeID + ')');
+
+         // await asyncForEach(homeConceptPages, async (pageData, index) => {
+         //    await homeConceptScraper(pageData);
+         //    console.log('Page ' + index + '(' + pageData.scrapeID + ')');
          // });
-         // await asyncForEach(fiziaPages, async (page, index) => {
-         //    await fiziaScraper(page.link, page.scrapeID, page.imgNumber, page.category);
-         //    console.log('Page ' + index + '(' + page.scrapeID + ')');
+
+         // await asyncForEach(fiziaPages, async (pageData, index) => {
+         //    await fiziaScraper(pageData);
+         //    console.log('Page ' + index + '(' + pageData.scrapeID + ')');
          // });
-         // await asyncForEach(homeConceptPages, async (page, index) => {
-         //    await homeConceptScraper(page.link, page.scrapeID, page.category);
-         //    console.log('Page ' + index + '(' + page.scrapeID + ')');
-         // });
-         // await projektwScraper(projektW.link, projektW.scrapeID, projektW.category);
+
+         // await projektwScraper(projektW);
+
+         // await buttonScraper(button);
       });
 
       // REMOVE OUT OF DATED PRODUCTS
@@ -83,9 +82,10 @@ mongoose
       (async () => {
          console.log('(Testing) Data scraping time: ' + new Date());
          // await ikeaScraper('https://www.ikea.com/pl/pl/cat/stoly-i-stolki-barowe-16244/', 'Ikea Szafki i Witryny');
-         // await removeSpecProducts({uri: /svg/, company: 'mera'});
 
-         removeOODProducts();
+         // await removeSpecProducts({uri: /svg/, company: 'mera'});
+         
+         // removeOODProducts();
       })();
 
       app.listen(process.env.PORT || 8101);

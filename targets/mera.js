@@ -4,13 +4,14 @@ const uuid = require('uuid');
 const uploadProducts = require('../utils/uploadProducts');
 const errorHandler = require('../utils/errorHandler');
 
-const scraper = async (scrapeLink, scrapeID, scrollDownQuantity = 6) => {
+const scraper = async (pgData) => {
+   const { link, scrapeID, scrollDownQuantity = 6 } = pgData;
    try {
       let page;
       const browser = await puppeteer.launch(); // {headless: false}
 
       page = await browser.newPage();
-      await page.goto(scrapeLink, { waitUntil: 'networkidle2' });
+      await page.goto(link, { waitUntil: 'networkidle2' });
 
       await page.waitFor(3000);
 
@@ -52,7 +53,9 @@ const scraper = async (scrapeLink, scrapeID, scrollDownQuantity = 6) => {
                let price = node.querySelector('.c-tile__text--price-bright')
                   ? node.querySelector('.c-tile__text--price-bright').textContent.slice(0, -2)
                   : '';
-               const uri = node.querySelector('img') ? node.querySelector('.c-tile__image').src : '';
+               const uri = node.querySelector('img')
+                  ? node.querySelector('.c-tile__image').src
+                  : '';
                const reference = node.querySelector('a') ? node.querySelector('a').href : '';
 
                if (uri.length > 0 && reference.length > 0 && title.length > 0) {
@@ -66,7 +69,7 @@ const scraper = async (scrapeLink, scrapeID, scrollDownQuantity = 6) => {
       pageData = pageData.map((element) => {
          return {
             ...element,
-            scrapeID: scrapeID,
+            scrapeID,
             filename: scrapeID.toLocaleLowerCase().replace(/\s+/g, '-') + '-' + uuid.v4(),
             description: element.description.replace(/\s\s+/g, ' '),
          };
