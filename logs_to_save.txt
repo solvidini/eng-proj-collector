@@ -1,0 +1,738 @@
+Connected to database.
+(Testing) Data scraping time: Tue Nov 10 2020 08:21:18 GMT+0100 (Central European Standard Time)
+Updated a product! URL:  https://mera.eu/produkt/plytka-wielkoformatowa-3/
+Updated a product! URL:  https://mera.eu/produkt/plytka-gresowa-21/
+Updated a product! URL:  https://mera.eu/produkt/plytka-gresowa-20/
+Updated a product! URL:  https://mera.eu/produkt/plytka-gresowa-19/
+Updated a product! URL:  https://mera.eu/produkt/plytka-gresowa-9/
+Updated a product! URL:  https://mera.eu/produkt/plytka-gresowa-5/
+Number of new products of Mera Plytki Lazienkowe to upload:  2
+Successfully scrapped Mera Plytki Lazienkowe products.
+Page 0(Mera Plytki Lazienkowe)
+Number of new products of Mera Plytki Tarasowe to upload:  0
+Successfully scrapped Mera Plytki Tarasowe products.
+Page 1(Mera Plytki Tarasowe)
+Updated a product! URL:  https://mera.eu/produkt/plytka-gresowa-21/
+Updated a product! URL:  https://mera.eu/produkt/plytka-gresowa-20/
+Updated a product! URL:  https://mera.eu/produkt/plytka-gresowa-19/
+Updated a product! URL:  https://mera.eu/produkt/plytka-gresowa-9/
+Updated a product! URL:  https://mera.eu/produkt/plytka-gresowa-5/
+Updated a product! URL:  https://mera.eu/produkt/plytka-drewnopodobna-19/
+Updated a product! URL:  https://mera.eu/produkt/plytka-drewnopodobna-21/
+Updated a product! URL:  https://mera.eu/produkt/plytka-gresowa-27/
+Updated a product! URL:  https://mera.eu/produkt/plytka-gresowa-22/
+Updated a product! URL:  https://mera.eu/produkt/plytka-gresowa-23/
+Updated a product! URL:  https://mera.eu/produkt/plytka-gresowa-24/
+Updated a product! URL:  https://mera.eu/produkt/plytka-gresowa-14/
+Number of new products of Mera Plytki Podlogowe to upload:  3
+Successfully scrapped Mera Plytki Podlogowe products.
+Page 2(Mera Plytki Podlogowe)
+Updated a product! URL:  https://mera.eu/produkt/plytka-wielkoformatowa-3/
+Updated a product! URL:  https://mera.eu/produkt/plytka-gresowa-21/
+Updated a product! URL:  https://mera.eu/produkt/plytka-gresowa-20/
+Updated a product! URL:  https://mera.eu/produkt/plytka-gresowa-19/
+Updated a product! URL:  https://mera.eu/produkt/plytka-gresowa-9/
+Updated a product! URL:  https://mera.eu/produkt/plytka-gresowa-5/
+Number of new products of Mera Plytki Scienne to upload:  18
+Successfully scrapped Mera Plytki Scienne products.
+Page 3(Mera Plytki Scienne)
+Updated a product! URL:  https://mera.eu/produkt/plytka-wielkoformatowa-3/
+Number of new products of Mera Plytki Wielkoformatowe to upload:  0
+Successfully scrapped Mera Plytki Wielkoformatowe products.
+Page 4(Mera Plytki Wielkoformatowe)
+Updated a product! URL:  https://mera.eu/produkt/plytka-gresowa-9/
+Updated a product! URL:  https://mera.eu/produkt/plytka-drewnopodobna-21/
+Number of new products of Mera Plytki Drewnopodobne to upload:  0
+Successfully scrapped Mera Plytki Drewnopodobne products.
+Page 5(Mera Plytki Drewnopodobne)
+Number of new products of Mera Plytki Imitujace Kamien to upload:  0
+Successfully scrapped Mera Plytki Imitujace Kamien products.
+Page 6(Mera Plytki Imitujace Kamien)
+Updated a product! URL:  https://mera.eu/produkt/plytka-gresowa-5/
+Number of new products of Mera Plytki Imitujace Beton to upload:  0
+Successfully scrapped Mera Plytki Imitujace Beton products.
+Page 7(Mera Plytki Imitujace Beton)
+Updated a product! URL:  https://mera.eu/produkt/plytka-gresowa-20/
+Updated a product! URL:  https://mera.eu/produkt/plytka-gresowa-19/
+Updated a product! URL:  https://mera.eu/produkt/plytka-gresowa-27/
+Updated a product! URL:  https://mera.eu/produkt/plytka-gresowa-22/
+Updated a product! URL:  https://mera.eu/produkt/plytka-gresowa-23/
+Updated a product! URL:  https://mera.eu/produkt/plytka-gresowa-24/
+Number of new products of Mera Plytki Heksagonalne to upload:  0
+Successfully scrapped Mera Plytki Heksagonalne products.
+Page 8(Mera Plytki Heksagonalne)
+Number of new products of Mera Plytki Orientalne to upload:  0
+Successfully scrapped Mera Plytki Orientalne products.
+Page 9(Mera Plytki Orientalne)
+Number of new products of Mera Mozaiki to upload:  0
+Successfully scrapped Mera Mozaiki products.
+Page 10(Mera Mozaiki)
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-57/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-56/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-55/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-53/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-52/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-50/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-49/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-48/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-47/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-46/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-45/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-44/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-42/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-39/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-38/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-34/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-30/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-28/
+Updated a product! URL:  https://mera.eu/produkt/lampa-plafon-wiszaca/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-25/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-22/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-21/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-20/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-19/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-18/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-17/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-16/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-15/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-14/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-13/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-12/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-11/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-10/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-9/
+Updated a product! URL:  https://mera.eu/produkt/lampa-ledowa-wiszaca/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-6/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-5/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-4/
+Updated a product! URL:  https://mera.eu/produkt/zyrandol-wiszacy-czarny/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-3/
+Updated a product! URL:  https://mera.eu/produkt/ital-lampa-wiszaca-miedz/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca/
+Number of new products of Mera Lampy Wiszace to upload:  0
+Successfully scrapped Mera Lampy Wiszace products.
+Page 11(Mera Lampy Wiszace)
+Page 12(Mera Wyposazenie Lazienek)
+Mera Wyposazenie Lazienek 
+ products 
+ Navigation timeout of 30000 ms exceeded 
+ 500 
+ Iteration number: 1
+Updated a product! URL:  https://mera.eu/produkt/kabina-skladana-3/
+Updated a product! URL:  https://mera.eu/produkt/kabina-skladana-2/
+Updated a product! URL:  https://mera.eu/produkt/kabina-skladana/
+Updated a product! URL:  https://mera.eu/produkt/drzwi-prysznicowe-lewe/
+Updated a product! URL:  https://mera.eu/produkt/drzwi-prysznicowe-prawe/
+Updated a product! URL:  https://mera.eu/produkt/drzwi-prysznicowe/
+Updated a product! URL:  https://mera.eu/produkt/scianka-prysznicowa/
+Updated a product! URL:  https://mera.eu/produkt/kabina-prysznicowa/
+Updated a product! URL:  https://mera.eu/produkt/drzwi-prysznicowe-2/
+Updated a product! URL:  https://mera.eu/produkt/front-do-kabiny-prysznicowej/
+Updated a product! URL:  https://mera.eu/produkt/kabina-prysznicowa-3/
+Updated a product! URL:  https://mera.eu/produkt/scianka-stala/
+Updated a product! URL:  https://mera.eu/produkt/drzwi-do-kabiny-prysznicowej/
+Updated a product! URL:  https://mera.eu/produkt/scianka-do-kabiny-prysznicowej/
+Updated a product! URL:  https://mera.eu/produkt/kabina-walk-in-8/
+Updated a product! URL:  https://mera.eu/produkt/kabina-prysznicowa-4/
+Updated a product! URL:  https://mera.eu/produkt/kabina-walk-in-6/
+Updated a product! URL:  https://mera.eu/produkt/kabina-walk-in-5/
+Updated a product! URL:  https://mera.eu/produkt/kabina-walk-in-ze-scianka-ruchoma/
+Updated a product! URL:  https://mera.eu/produkt/scianka-boczna-do-kabiny-walk-in/
+Updated a product! URL:  https://mera.eu/produkt/kabina-walk-in-3/
+Updated a product! URL:  https://mera.eu/produkt/drzwi-suwane/
+Updated a product! URL:  https://mera.eu/produkt/kabina-walk-in-2/
+Updated a product! URL:  https://mera.eu/produkt/kabina-walk-in/
+Updated a product! URL:  https://mera.eu/produkt/kabina-prysznicowa-2/
+Updated a product! URL:  https://mera.eu/produkt/scianka-prysznicowa-4/
+Updated a product! URL:  https://mera.eu/produkt/scianka-prysznicowa-3/
+Updated a product! URL:  https://mera.eu/produkt/scianka-prysznicowa-2/
+Number of new products of Mera Kabiny Prysznicowe to upload:  1
+Error: Product validation failed: category: Path `category` is required.
+    at ValidationError.inspect (/var/www/swpiu-collector.samuelk.pl/node_modules/mongoose/lib/error/validation.js:47:26)
+    at internal/per_context/primordials.js:23:32
+    at formatValue (internal/util/inspect.js:774:19)
+    at inspect (internal/util/inspect.js:336:10)
+    at formatWithOptionsInternal (internal/util/inspect.js:2006:40)
+    at formatWithOptions (internal/util/inspect.js:1888:10)
+    at console.value (internal/console/constructor.js:320:14)
+    at console.warn (internal/console/constructor.js:353:61)
+    at NotifyFeature.onUnhandledRejection (/usr/lib/node_modules/pm2/node_modules/@pm2/io/build/main/features/notify.js:129:17)
+    at process.emit (events.js:315:20)
+    at processPromiseRejections (internal/process/promises.js:245:33)
+    at processTicksAndRejections (internal/process/task_queues.js:94:32) {
+  errors: {
+    category: ValidatorError: Path `category` is required.
+        at validate (/var/www/swpiu-collector.samuelk.pl/node_modules/mongoose/lib/schematype.js:1222:13)
+        at /var/www/swpiu-collector.samuelk.pl/node_modules/mongoose/lib/schematype.js:1205:7
+        at Array.forEach (<anonymous>)
+        at SchemaString.SchemaType.doValidate (/var/www/swpiu-collector.samuelk.pl/node_modules/mongoose/lib/schematype.js:1150:14)
+        at /var/www/swpiu-collector.samuelk.pl/node_modules/mongoose/lib/document.js:2439:18
+        at processTicksAndRejections (internal/process/task_queues.js:75:11) {
+      properties: [Object],
+      kind: 'required',
+      path: 'category',
+      value: '',
+      reason: undefined,
+      [Symbol(mongoose:validatorError)]: true
+    }
+  },
+  _message: 'Product validation failed'
+}
+Successfully scrapped Mera Kabiny Prysznicowe products.
+Page 13(Mera Kabiny Prysznicowe)
+Updated a product! URL:  https://mera.eu/produkt/szafka-lazienkowa-16/
+Updated a product! URL:  https://mera.eu/produkt/szafka-pod-umywalke-2/
+Updated a product! URL:  https://mera.eu/produkt/szafka-lazienkowa-7/
+Updated a product! URL:  https://mera.eu/produkt/szafka-podtynkowa-wysoka/
+Updated a product! URL:  https://mera.eu/produkt/umywalka-zintegrowana-na-szafke/
+Updated a product! URL:  https://mera.eu/produkt/komplet-mebli-lazienkowych/
+Updated a product! URL:  https://mera.eu/produkt/modul-do-mebli-lazienkowych/
+Updated a product! URL:  https://mera.eu/produkt/szafka-lazienkowa-4/
+Updated a product! URL:  https://mera.eu/produkt/szafka-lazienkowa-3/
+Updated a product! URL:  https://mera.eu/produkt/wklad-do-mebli-lazienkowych/
+Updated a product! URL:  https://mera.eu/produkt/szafka-lazienkowa-dostawka/
+Updated a product! URL:  https://mera.eu/produkt/szafka-lazienkowa-2/
+Updated a product! URL:  https://mera.eu/produkt/szafka-lazienkowa/
+Updated a product! URL:  https://mera.eu/produkt/reling-mocujacy/
+Updated a product! URL:  https://mera.eu/produkt/blat-drewniany/
+Updated a product! URL:  https://mera.eu/produkt/blat-do-szafki-podumywalkowej/
+Updated a product! URL:  https://mera.eu/produkt/szafka-lazienna-7/
+Updated a product! URL:  https://mera.eu/produkt/szafka-lazienna-6/
+Updated a product! URL:  https://mera.eu/produkt/szafka-lazienna-5/
+Updated a product! URL:  https://mera.eu/produkt/szafka-lazienna-4/
+Updated a product! URL:  https://mera.eu/produkt/szafka-lazienna-3/
+Updated a product! URL:  https://mera.eu/produkt/szafka-lazienna/
+Updated a product! URL:  https://mera.eu/produkt/szafka-pod-umywalke/
+Number of new products of Mera Meble Lazienkowe to upload:  0
+Successfully scrapped Mera Meble Lazienkowe products.
+Page 14(Mera Meble Lazienkowe)
+Updated a product! URL:  https://mera.eu/produkt/naroznik-klasyczny-13/
+Updated a product! URL:  https://mera.eu/produkt/naroznik-klasyczny-11/
+Updated a product! URL:  https://mera.eu/produkt/naroznik-z-funkcja-spania-2/
+Number of new products of Mera Narozniki to upload:  3
+Successfully scrapped Mera Narozniki products.
+Page 15(Mera Narozniki)
+Updated a product! URL:  https://mera.eu/produkt/grzejnik-chrom-2/
+Updated a product! URL:  https://mera.eu/produkt/grzejnik-lazienkowy-6/
+Updated a product! URL:  https://mera.eu/produkt/grzejnik-chrom/
+Updated a product! URL:  https://mera.eu/produkt/grzejnik-dekoracyjny-6/
+Updated a product! URL:  https://mera.eu/produkt/grzejnik-elektryczny/
+Updated a product! URL:  https://mera.eu/produkt/grzejnik-dekoracyjny-5/
+Updated a product! URL:  https://mera.eu/produkt/grzejnik-lazienkowy-chromowany-425x1200/
+Updated a product! URL:  https://mera.eu/produkt/grzejnik-lazienkowy-3/
+Updated a product! URL:  https://mera.eu/produkt/grzejnik-lazienkowy-2/
+Number of new products of Mera Grzejniki to upload:  0
+Successfully scrapped Mera Grzejniki products.
+Page 16(Mera Grzejniki)
+Updated a product! URL:  https://mera.eu/produkt/bateria-umywalkowa-34/
+Updated a product! URL:  https://mera.eu/produkt/bateria-umywalkowa-32/
+Updated a product! URL:  https://mera.eu/produkt/bateria-umywalkowa-29/
+Updated a product! URL:  https://mera.eu/produkt/bateria-umywalkowa-27/
+Updated a product! URL:  https://mera.eu/produkt/bateria-umywalkowa-25/
+Updated a product! URL:  https://mera.eu/produkt/bateria-umywalkowa-24/
+Updated a product! URL:  https://mera.eu/produkt/bateria-umywalkowa-21/
+Updated a product! URL:  https://mera.eu/produkt/bateria-umywalkowa-18/
+Updated a product! URL:  https://mera.eu/produkt/bateria-umywalkowa-16/
+Updated a product! URL:  https://mera.eu/produkt/bateria-podtynkowa-2/
+Updated a product! URL:  https://mera.eu/produkt/bateria-umywalkowa-15/
+Updated a product! URL:  https://mera.eu/produkt/bateria-umywalkowa-14/
+Updated a product! URL:  https://mera.eu/produkt/bateria-umywalkowa-13/
+Updated a product! URL:  https://mera.eu/produkt/bateria-umywalkowa-12/
+Updated a product! URL:  https://mera.eu/produkt/bateria-umywalkowa-11/
+Updated a product! URL:  https://mera.eu/produkt/bateria-podtynkowa/
+Updated a product! URL:  https://mera.eu/produkt/bateria-umywalkowa-10/
+Updated a product! URL:  https://mera.eu/produkt/bateria-umywalkowa-7/
+Updated a product! URL:  https://mera.eu/produkt/bateria-umywalkowa-6/
+Updated a product! URL:  https://mera.eu/produkt/bateria-nablatowa/
+Updated a product! URL:  https://mera.eu/produkt/bateria-umywalkowa-4/
+Updated a product! URL:  https://mera.eu/produkt/bateria-wannowa-6/
+Updated a product! URL:  https://mera.eu/produkt/bateria-wannowa-2/
+Updated a product! URL:  https://mera.eu/produkt/bateria-wannowa/
+Updated a product! URL:  https://mera.eu/produkt/bateria-termostatyczna-podtynkowa/
+Updated a product! URL:  https://mera.eu/produkt/przylacze-z-uchwytem-2/
+Updated a product! URL:  https://mera.eu/produkt/zestaw-natryskowy/
+Updated a product! URL:  https://mera.eu/produkt/przylacze-z-uchwytem/
+Number of new products of Mera Armatura to upload:  0
+Successfully scrapped Mera Armatura products.
+Page 17(Mera Armatura)
+Updated a product! URL:  https://mera.eu/produkt/lozko-drewniane-helsinki/
+Updated a product! URL:  https://mera.eu/produkt/lozko-drewniane-caracas/
+Updated a product! URL:  https://mera.eu/produkt/lozko-drewniane-lima/
+Updated a product! URL:  https://mera.eu/produkt/lozko-drewniane-barcelona/
+Updated a product! URL:  https://mera.eu/produkt/lozko-drewniane-oslo/
+Updated a product! URL:  https://mera.eu/produkt/lozko-drewniane-sanmarino/
+Updated a product! URL:  https://mera.eu/produkt/lozko-drewniane-warsaw/
+Updated a product! URL:  https://mera.eu/produkt/lozko-drewniane-lisbona/
+Updated a product! URL:  https://mera.eu/produkt/lozko-kontynentalne-zeus/
+Updated a product! URL:  https://mera.eu/produkt/lozko-kontynentalne-poseidon/
+Updated a product! URL:  https://mera.eu/produkt/lozko-kontynentalne-persefona/
+Updated a product! URL:  https://mera.eu/produkt/lozko-kontynentalne-nike/
+Updated a product! URL:  https://mera.eu/produkt/lozko-kontynentalne-hermes/
+Updated a product! URL:  https://mera.eu/produkt/lozko-kontynentalne-hecate/
+Updated a product! URL:  https://mera.eu/produkt/lozko-kontynentalne-hades/
+Updated a product! URL:  https://mera.eu/produkt/lozko-kontynentalne-athena/
+Updated a product! URL:  https://mera.eu/produkt/lozko-kontynentalne-apollo/
+Updated a product! URL:  https://mera.eu/produkt/lozko-kontynentalne-aphrodite/
+Number of new products of Mera Lozka to upload:  0
+Successfully scrapped Mera Lozka products.
+Page 18(Mera Lozka)
+Updated a product! URL:  https://mera.eu/produkt/komoda-44/
+Updated a product! URL:  https://mera.eu/produkt/komoda-43/
+Updated a product! URL:  https://mera.eu/produkt/komoda-42/
+Updated a product! URL:  https://mera.eu/produkt/komoda-41/
+Updated a product! URL:  https://mera.eu/produkt/komoda-40/
+Updated a product! URL:  https://mera.eu/produkt/komoda-39/
+Updated a product! URL:  https://mera.eu/produkt/komoda-38/
+Updated a product! URL:  https://mera.eu/produkt/komoda-37/
+Updated a product! URL:  https://mera.eu/produkt/komoda-36/
+Updated a product! URL:  https://mera.eu/produkt/komoda-35/
+Updated a product! URL:  https://mera.eu/produkt/komoda-34/
+Updated a product! URL:  https://mera.eu/produkt/komoda-33/
+Updated a product! URL:  https://mera.eu/produkt/komoda-32/
+Updated a product! URL:  https://mera.eu/produkt/komoda-31/
+Updated a product! URL:  https://mera.eu/produkt/komoda-30/
+Updated a product! URL:  https://mera.eu/produkt/komoda-29/
+Updated a product! URL:  https://mera.eu/produkt/komoda-28/
+Updated a product! URL:  https://mera.eu/produkt/komoda-27/
+Updated a product! URL:  https://mera.eu/produkt/komoda-26/
+Updated a product! URL:  https://mera.eu/produkt/komoda-25/
+Updated a product! URL:  https://mera.eu/produkt/komoda-24/
+Updated a product! URL:  https://mera.eu/produkt/komoda-23/
+Updated a product! URL:  https://mera.eu/produkt/komoda-22/
+Updated a product! URL:  https://mera.eu/produkt/komoda-21/
+Updated a product! URL:  https://mera.eu/produkt/komoda-20/
+Updated a product! URL:  https://mera.eu/produkt/komoda-19/
+Updated a product! URL:  https://mera.eu/produkt/komoda-18/
+Updated a product! URL:  https://mera.eu/produkt/komoda-17/
+Updated a product! URL:  https://mera.eu/produkt/komoda-16/
+Updated a product! URL:  https://mera.eu/produkt/komoda-15/
+Updated a product! URL:  https://mera.eu/produkt/komoda-14/
+Updated a product! URL:  https://mera.eu/produkt/komoda-13/
+Updated a product! URL:  https://mera.eu/produkt/komoda-12/
+Updated a product! URL:  https://mera.eu/produkt/komoda-11/
+Updated a product! URL:  https://mera.eu/produkt/komoda-10/
+Updated a product! URL:  https://mera.eu/produkt/komoda-9/
+Updated a product! URL:  https://mera.eu/produkt/komoda-8/
+Updated a product! URL:  https://mera.eu/produkt/komoda-7/
+Updated a product! URL:  https://mera.eu/produkt/komoda-6/
+Updated a product! URL:  https://mera.eu/produkt/komoda-5/
+Updated a product! URL:  https://mera.eu/produkt/komoda-4/
+Updated a product! URL:  https://mera.eu/produkt/komoda-3/
+Updated a product! URL:  https://mera.eu/produkt/komoda-2/
+Updated a product! URL:  https://mera.eu/produkt/komoda/
+Number of new products of Mera Komody Toaletki to upload:  0
+Successfully scrapped Mera Komody Toaletki products.
+Page 19(Mera Komody Toaletki)
+Updated a product! URL:  https://mera.eu/produkt/materac-brinta-200x200-cm/
+Updated a product! URL:  https://mera.eu/produkt/materac-brinta-120x200-cm/
+Updated a product! URL:  https://mera.eu/produkt/materac-brinta-100x200-cm/
+Updated a product! URL:  https://mera.eu/produkt/materac-airro-120x200-cm/
+Updated a product! URL:  https://mera.eu/produkt/materac-airro-80x200-cm/
+Number of new products of Mera Materace to upload:  1
+Successfully scrapped Mera Materace products.
+Page 20(Mera Materace)
+Updated a product! URL:  https://mera.eu/produkt/fotel-17/
+Updated a product! URL:  https://mera.eu/produkt/fotel-16/
+Updated a product! URL:  https://mera.eu/produkt/fotel-15/
+Updated a product! URL:  https://mera.eu/produkt/fotel-14/
+Updated a product! URL:  https://mera.eu/produkt/fotel-13/
+Updated a product! URL:  https://mera.eu/produkt/fotel-12/
+Updated a product! URL:  https://mera.eu/produkt/fotel-11/
+Updated a product! URL:  https://mera.eu/produkt/fotel-10/
+Updated a product! URL:  https://mera.eu/produkt/fotel-9/
+Updated a product! URL:  https://mera.eu/produkt/fotel-8/
+Updated a product! URL:  https://mera.eu/produkt/fotel-6/
+Updated a product! URL:  https://mera.eu/produkt/fotel-5/
+Updated a product! URL:  https://mera.eu/produkt/fotel-4/
+Updated a product! URL:  https://mera.eu/produkt/fotel-3/
+Updated a product! URL:  https://mera.eu/produkt/fotel-2/
+Updated a product! URL:  https://mera.eu/produkt/fotel/
+Number of new products of Mera Fotele to upload:  0
+Successfully scrapped Mera Fotele products.
+Page 21(Mera Fotele)
+Updated a product! URL:  https://mera.eu/produkt/stolik-57/
+Updated a product! URL:  https://mera.eu/produkt/stolik-56/
+Updated a product! URL:  https://mera.eu/produkt/stolik-55/
+Updated a product! URL:  https://mera.eu/produkt/stolik-54/
+Updated a product! URL:  https://mera.eu/produkt/stolik-53/
+Updated a product! URL:  https://mera.eu/produkt/stolik-52/
+Updated a product! URL:  https://mera.eu/produkt/stolik-51/
+Updated a product! URL:  https://mera.eu/produkt/stolik-50/
+Updated a product! URL:  https://mera.eu/produkt/stolik-49/
+Updated a product! URL:  https://mera.eu/produkt/stolik-48/
+Updated a product! URL:  https://mera.eu/produkt/stolik-47/
+Updated a product! URL:  https://mera.eu/produkt/stolik-46/
+Updated a product! URL:  https://mera.eu/produkt/stolik-45/
+Updated a product! URL:  https://mera.eu/produkt/stolik-44/
+Updated a product! URL:  https://mera.eu/produkt/stolik-43/
+Updated a product! URL:  https://mera.eu/produkt/stolik-42/
+Updated a product! URL:  https://mera.eu/produkt/stolik-41/
+Updated a product! URL:  https://mera.eu/produkt/stolik-40/
+Updated a product! URL:  https://mera.eu/produkt/stolik-39/
+Updated a product! URL:  https://mera.eu/produkt/stolik-38/
+Updated a product! URL:  https://mera.eu/produkt/stolik-37/
+Updated a product! URL:  https://mera.eu/produkt/stolik-36/
+Updated a product! URL:  https://mera.eu/produkt/stolik-35/
+Updated a product! URL:  https://mera.eu/produkt/stolik-34/
+Updated a product! URL:  https://mera.eu/produkt/stolik-33/
+Updated a product! URL:  https://mera.eu/produkt/stolik-32/
+Updated a product! URL:  https://mera.eu/produkt/stolik-31/
+Updated a product! URL:  https://mera.eu/produkt/stolik-30/
+Updated a product! URL:  https://mera.eu/produkt/stolik-29/
+Updated a product! URL:  https://mera.eu/produkt/stolik-28/
+Updated a product! URL:  https://mera.eu/produkt/stolik-27/
+Updated a product! URL:  https://mera.eu/produkt/stolik-26/
+Updated a product! URL:  https://mera.eu/produkt/stolik-25/
+Updated a product! URL:  https://mera.eu/produkt/stolik-24/
+Updated a product! URL:  https://mera.eu/produkt/stolik-23/
+Updated a product! URL:  https://mera.eu/produkt/stolik-22/
+Updated a product! URL:  https://mera.eu/produkt/stolik-21/
+Updated a product! URL:  https://mera.eu/produkt/stolik-20/
+Updated a product! URL:  https://mera.eu/produkt/stolik-19/
+Updated a product! URL:  https://mera.eu/produkt/stolik-18/
+Updated a product! URL:  https://mera.eu/produkt/stolik-17/
+Updated a product! URL:  https://mera.eu/produkt/stolik-16/
+Updated a product! URL:  https://mera.eu/produkt/stolik-15/
+Updated a product! URL:  https://mera.eu/produkt/stolik-14/
+Updated a product! URL:  https://mera.eu/produkt/stolik-13/
+Updated a product! URL:  https://mera.eu/produkt/stolik-12/
+Updated a product! URL:  https://mera.eu/produkt/stolik-11/
+Updated a product! URL:  https://mera.eu/produkt/stolik-10/
+Updated a product! URL:  https://mera.eu/produkt/stolik-9/
+Updated a product! URL:  https://mera.eu/produkt/stolik-8/
+Updated a product! URL:  https://mera.eu/produkt/stolik-7/
+Updated a product! URL:  https://mera.eu/produkt/stolik-6/
+Updated a product! URL:  https://mera.eu/produkt/stolik-5/
+Updated a product! URL:  https://mera.eu/produkt/stolik-4/
+Updated a product! URL:  https://mera.eu/produkt/stolik-3/
+Updated a product! URL:  https://mera.eu/produkt/stolik-2/
+Updated a product! URL:  https://mera.eu/produkt/stolik/
+Number of new products of Mera Lawy Stoliki to upload:  0
+Successfully scrapped Mera Lawy Stoliki products.
+Page 22(Mera Lawy Stoliki)
+Updated a product! URL:  https://mera.eu/produkt/kinkiet-11/
+Updated a product! URL:  https://mera.eu/produkt/kinkiet-10/
+Updated a product! URL:  https://mera.eu/produkt/kinkiet-9/
+Updated a product! URL:  https://mera.eu/produkt/kinkiet-chrom/
+Updated a product! URL:  https://mera.eu/produkt/kinkiet-7/
+Updated a product! URL:  https://mera.eu/produkt/kinkiet-5/
+Updated a product! URL:  https://mera.eu/produkt/nowoczesny-kinkiet-scienny/
+Updated a product! URL:  https://mera.eu/produkt/kinkiet-4/
+Updated a product! URL:  https://mera.eu/produkt/kinkiet-3/
+Updated a product! URL:  https://mera.eu/produkt/kinkiet-2/
+Updated a product! URL:  https://mera.eu/produkt/oprawa-oswietleniowa-talo-parete-fluo-chrom-kinkiet/
+Updated a product! URL:  https://mera.eu/produkt/kinkiet/
+Updated a product! URL:  https://mera.eu/produkt/lampa-stojaca/
+Updated a product! URL:  https://mera.eu/produkt/lampa-podlogowa/
+Updated a product! URL:  https://mera.eu/produkt/oprawa-wpuszczana-11/
+Updated a product! URL:  https://mera.eu/produkt/oprawa-wpuszczana-9/
+Updated a product! URL:  https://mera.eu/produkt/oprawa-sufitowa/
+Updated a product! URL:  https://mera.eu/produkt/oprawa-wpuszczana-6/
+Updated a product! URL:  https://mera.eu/produkt/oprawa-wpuszczana-4/
+Updated a product! URL:  https://mera.eu/produkt/oprawa-wpuszczana-3/
+Updated a product! URL:  https://mera.eu/produkt/odblysnik/
+Updated a product! URL:  https://mera.eu/produkt/oprawa-natynkowa/
+Updated a product! URL:  https://mera.eu/produkt/oprawa-wpuszczana-2/
+Updated a product! URL:  https://mera.eu/produkt/lampa-sufitowa/
+Updated a product! URL:  https://mera.eu/produkt/plafon-natynkowy-4/
+Updated a product! URL:  https://mera.eu/produkt/plafon-natynkowy-3/
+Updated a product! URL:  https://mera.eu/produkt/plafon-natynkowy-2/
+Updated a product! URL:  https://mera.eu/produkt/plafon/
+Updated a product! URL:  https://mera.eu/produkt/plafon-sufitowy-2/
+Updated a product! URL:  https://mera.eu/produkt/plafon-sufitowy/
+Updated a product! URL:  https://mera.eu/produkt/plafon-natynkowy/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-57/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-56/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-55/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-53/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-52/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-50/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-49/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-48/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-47/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-46/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-45/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-44/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-42/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-39/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-38/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-34/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-30/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-28/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-25/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-22/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-21/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-20/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-19/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-18/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-17/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-16/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-15/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-14/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-13/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-12/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-11/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-10/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-9/
+Updated a product! URL:  https://mera.eu/produkt/lampa-ledowa-wiszaca/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-6/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-5/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-4/
+Updated a product! URL:  https://mera.eu/produkt/zyrandol-wiszacy-czarny/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca-3/
+Updated a product! URL:  https://mera.eu/produkt/ital-lampa-wiszaca-miedz/
+Updated a product! URL:  https://mera.eu/produkt/lampa-wiszaca/
+Number of new products of Mera Lampy to upload:  0
+Successfully scrapped Mera Lampy products.
+Page 23(Mera Lampy)
+Number of new products of Mera Parasole Ogrodowe to upload:  0
+Successfully scrapped Mera Parasole Ogrodowe products.
+Page 24(Mera Parasole Ogrodowe)
+Updated a product! URL:  https://mera.eu/produkt/donica-ogrodowa-cap-antracyt-61cm/
+Updated a product! URL:  https://mera.eu/produkt/donica-ogrodowa-z-cementu-kosc-sloniowa-270-33cm/
+Updated a product! URL:  https://mera.eu/produkt/donica-ogrodowa-z-cementu-kosc-sloniowa-902-31cm/
+Updated a product! URL:  https://mera.eu/produkt/donica-ogrodowa-cap-antracyt-4/
+Updated a product! URL:  https://mera.eu/produkt/donica-ogrodowa-cap-kosc-sloniowa-16/
+Updated a product! URL:  https://mera.eu/produkt/donica-ogrodowa-cap-kosc-sloniowa-15/
+Updated a product! URL:  https://mera.eu/produkt/kosz-ren-o-50-cm-szary/
+Updated a product! URL:  https://mera.eu/produkt/kosz-ren-o-35-cm-szary/
+Updated a product! URL:  https://mera.eu/produkt/donica-ogrodowa-z-cementu-kosc-sloniowa-51cm/
+Updated a product! URL:  https://mera.eu/produkt/kosz-ren-o-65-cm-bialy-przecierany/
+Updated a product! URL:  https://mera.eu/produkt/kosz-ren-o-50-cm-bialy-przecierany/
+Updated a product! URL:  https://mera.eu/produkt/kosz-ren-o-35-cm-bialy-przecierany/
+Updated a product! URL:  https://mera.eu/produkt/kosz-nar-50-cm-szary/
+Updated a product! URL:  https://mera.eu/produkt/kosz-nar-35-cm-szary/
+Updated a product! URL:  https://mera.eu/produkt/kosz-nar-65-cm-bialy-przecierany/
+Updated a product! URL:  https://mera.eu/produkt/kosz-nar-50-cm-bialy-przecierany/
+Updated a product! URL:  https://mera.eu/produkt/kosz-nar-35-cm-bialy-przecierany/
+Updated a product! URL:  https://mera.eu/produkt/kosz-ren-o-65-cm-szary/
+Updated a product! URL:  https://mera.eu/produkt/kosz-ami-o-45-cm-szary/
+Updated a product! URL:  https://mera.eu/produkt/kosz-ami-o-40-cm-szary/
+Updated a product! URL:  https://mera.eu/produkt/kosz-ami-o-35-szary/
+Updated a product! URL:  https://mera.eu/produkt/kosz-ami-o-45-cm-bialy-przecierany/
+Updated a product! URL:  https://mera.eu/produkt/kosz-ami-o-40-cm-bialy-przecierany/
+Updated a product! URL:  https://mera.eu/produkt/kosz-ami-o-35-bialy-przecierany/
+Updated a product! URL:  https://mera.eu/produkt/kosz-nar-65-cm-szary/
+Number of new products of Mera Donice Ogrodowe to upload:  0
+Successfully scrapped Mera Donice Ogrodowe products.
+Page 25(Mera Donice Ogrodowe)
+Updated a product! URL:  https://mera.eu/produkt/podnozek-can-bialy-przecierany/
+Updated a product! URL:  https://mera.eu/produkt/stolik-puf-can-o-52-cm-szary/
+Updated a product! URL:  https://mera.eu/produkt/podnozek-can-szary/
+Number of new products of Mera Krzesla Fotele Ogrodowe to upload:  0
+Successfully scrapped Mera Krzesla Fotele Ogrodowe products.
+Page 26(Mera Krzesla Fotele Ogrodowe)
+Number of new products of Mera Krzesla Fotele Ogrodowe to upload:  0
+Successfully scrapped Mera Krzesla Fotele Ogrodowe products.
+Page 27(Mera Krzesla Fotele Ogrodowe)
+Updated a product! URL:  https://mera.eu/produkt/lezak-ogrodowy-cor-antracyt/
+Number of new products of Mera Lezaki Lezanki Ogrodowe to upload:  0
+Successfully scrapped Mera Lezaki Lezanki Ogrodowe products.
+Page 28(Mera Lezaki Lezanki Ogrodowe)
+Updated a product! URL:  https://mera.eu/produkt/stol-ogrodowy-vc-antracite/
+Updated a product! URL:  https://mera.eu/produkt/stol-ogrodowy-vic-szary/
+Updated a product! URL:  https://mera.eu/produkt/stolik-puf-can-o-35-cm-szary/
+Updated a product! URL:  https://mera.eu/produkt/stolik-puf-can-o-35-cm-bialy-przecierany/
+Updated a product! URL:  https://mera.eu/produkt/stol-ogrodowy-vic-jasno-szary/
+Updated a product! URL:  https://mera.eu/produkt/stolik-puf-can-o-52-cm-bialy-przecierany/
+Updated a product! URL:  https://mera.eu/produkt/meble-ogrodowe-sim-120-elo/
+Updated a product! URL:  https://mera.eu/produkt/komplet-ogrodowy-sim-180cm-elo/
+Updated a product! URL:  https://mera.eu/produkt/szklany-blat-obrotowy-na-stol-ron-o180-cm/
+Number of new products of Mera Stoly Ogrodowe to upload:  0
+Successfully scrapped Mera Stoly Ogrodowe products.
+Page 29(Mera Stoly Ogrodowe)
+Products end.
+Updated a product! URL:  https://www.ikea.com/pl/pl/p/delaktig-fotel-ze-stolikiem-i-lampa-tallmyra-bialy-czarny-s09253762/
+Updated a product! URL:  https://www.ikea.com/pl/pl/p/delaktig-szezlong-z-podlokietnikiem-tallmyra-bialy-czarny-s09259938/
+Updated a product! URL:  https://www.ikea.com/pl/pl/p/delaktig-fotel-gunnared-jasny-rozowy-s19289303/
+Updated a product! URL:  https://www.ikea.com/pl/pl/p/delaktig-szezlong-ze-stolikiem-i-lampa-gunnared-jasny-rozowy-s09289332/
+Number of new products of Ikea Fotele i Szezlongi to upload:  17
+Successfully scrapped Ikea Fotele i Szezlongi products.
+Page 0(Ikea Fotele i Szezlongi)
+Products end.
+Number of new products of Ikea Szafy to upload:  8
+Successfully scrapped Ikea Szafy products.
+Page 1(Ikea Szafy)
+Products end.
+Updated a product! URL:  https://www.ikea.com/pl/pl/p/kallax-lack-szafka-z-2-polkami-bialy-s89398676/
+Number of new products of Ikea Meble RTV to upload:  4
+Successfully scrapped Ikea Meble RTV products.
+Page 2(Ikea Meble RTV)
+Products end.
+Number of new products of Ikea Lozka to upload:  22
+Successfully scrapped Ikea Lozka products.
+Page 3(Ikea Lozka)
+Products end.
+Updated a product! URL:  https://www.ikea.com/pl/pl/p/kallax-lack-szafka-z-2-polkami-bialy-s89398676/
+Number of new products of Ikea Biblioteczki i Regaly to upload:  5
+Successfully scrapped Ikea Biblioteczki i Regaly products.
+Page 4(Ikea Biblioteczki i Regaly)
+Products end.
+Number of new products of Ikea Komody i Kontenerki to upload:  31
+Successfully scrapped Ikea Komody i Kontenerki products.
+Page 5(Ikea Komody i Kontenerki)
+Products end.
+Number of new products of Ikea Kredensy Bufety i Konsole to upload:  0
+Successfully scrapped Ikea Kredensy Bufety i Konsole products.
+Page 6(Ikea Kredensy Bufety i Konsole)
+Products end.
+Updated a product! URL:  https://www.ikea.com/pl/pl/p/delaktig-szezlong-z-podlokietnikiem-tallmyra-bialy-czarny-s09259938/
+Updated a product! URL:  https://www.ikea.com/pl/pl/p/delaktig-fotel-ze-stolikiem-i-lampa-tallmyra-bialy-czarny-s09253762/
+Updated a product! URL:  https://www.ikea.com/pl/pl/p/delaktig-szezlong-ze-stolikiem-i-lampa-gunnared-jasny-rozowy-s09289332/
+Updated a product! URL:  https://www.ikea.com/pl/pl/p/delaktig-fotel-gunnared-jasny-rozowy-s19289303/
+Number of new products of Ikea Krzesla to upload:  41
+Successfully scrapped Ikea Krzesla products.
+Page 7(Ikea Krzesla)
+Products end.
+Number of new products of Ikea Meble Dla Dzieci to upload:  8
+Successfully scrapped Ikea Meble Dla Dzieci products.
+Page 8(Ikea Meble Dla Dzieci)
+Products end.
+Number of new products of Ikea Ogrodowe i Na Balkon to upload:  6
+Successfully scrapped Ikea Ogrodowe i Na Balkon products.
+Page 9(Ikea Ogrodowe i Na Balkon)
+Products end.
+Updated a product! URL:  https://www.ikea.com/pl/pl/p/delaktig-szezlong-ze-stolikiem-i-lampa-gunnared-jasny-rozowy-s09289332/
+Updated a product! URL:  https://www.ikea.com/pl/pl/p/delaktig-sofa-2-osobowa-gunnared-jasny-rozowy-s09289346/
+Updated a product! URL:  https://www.ikea.com/pl/pl/p/delaktig-fotel-gunnared-jasny-rozowy-s19289303/
+Updated a product! URL:  https://www.ikea.com/pl/pl/p/delaktig-szezlong-z-podlokietnikiem-tallmyra-bialy-czarny-s09259938/
+Updated a product! URL:  https://www.ikea.com/pl/pl/p/delaktig-fotel-ze-stolikiem-i-lampa-tallmyra-bialy-czarny-s09253762/
+Updated a product! URL:  https://www.ikea.com/pl/pl/p/delaktig-sofa-2-osobowa-ze-stolikiem-gunnared-jasny-rozowy-s09289351/
+Number of new products of Ikea Sofy i Fotele to upload:  27
+Successfully scrapped Ikea Sofy i Fotele products.
+Page 10(Ikea Sofy i Fotele)
+Products end.
+Number of new products of Ikea Stoly i Biurka to upload:  21
+Successfully scrapped Ikea Stoly i Biurka products.
+Page 11(Ikea Stoly i Biurka)
+Products end.
+Number of new products of Ikea Szafki i Witryny to upload:  0
+Successfully scrapped Ikea Szafki i Witryny products.
+Page 12(Ikea Szafki i Witryny)
+Products end.
+Number of new products of Ikea Wozki Kuchenne i Lazienkowe to upload:  0
+Successfully scrapped Ikea Wozki Kuchenne i Lazienkowe products.
+Page 13(Ikea Wozki Kuchenne i Lazienkowe)
+Products end.
+Number of new products of Ikea Akcesoria Lazienkowe to upload:  3
+Successfully scrapped Ikea Akcesoria Lazienkowe products.
+Page 14(Ikea Akcesoria Lazienkowe)
+Products end.
+Number of new products of Ikea Baterie Lazienkowe to upload:  0
+Successfully scrapped Ikea Baterie Lazienkowe products.
+Page 15(Ikea Baterie Lazienkowe)
+Products end.
+Number of new products of Ikea Lustra Do Lazienki to upload:  1
+Successfully scrapped Ikea Lustra Do Lazienki products.
+Page 16(Ikea Lustra Do Lazienki)
+Products end.
+Number of new products of Ikea Oswietlenie Lazienkowe to upload:  0
+Successfully scrapped Ikea Oswietlenie Lazienkowe products.
+Page 17(Ikea Oswietlenie Lazienkowe)
+Products end.
+Number of new products of Ikea Prysznice to upload:  0
+Successfully scrapped Ikea Prysznice products.
+Page 18(Ikea Prysznice)
+Products end.
+Number of new products of Ikea Toaletki Lazienkowe to upload:  1
+Successfully scrapped Ikea Toaletki Lazienkowe products.
+Page 19(Ikea Toaletki Lazienkowe)
+Products end.
+Number of new products of Ikea Umywalki to upload:  1
+Successfully scrapped Ikea Umywalki products.
+Page 20(Ikea Umywalki)
+Products end.
+Number of new products of Ikea Dywaniki i Maty Lazienkowe to upload:  0
+Successfully scrapped Ikea Dywaniki i Maty Lazienkowe products.
+Page 21(Ikea Dywaniki i Maty Lazienkowe)
+Products end.
+Number of new products of Ikea Dywany to upload:  3
+Successfully scrapped Ikea Dywany products.
+Page 22(Ikea Dywany)
+Products end.
+Number of new products of Ikea Dywany to upload:  0
+Successfully scrapped Ikea Dywany products.
+Page 23(Ikea Dywany)
+Products end.
+Number of new products of Ikea Wycieraczki Pod Drzwi to upload:  0
+Successfully scrapped Ikea Wycieraczki Pod Drzwi products.
+Page 24(Ikea Wycieraczki Pod Drzwi)
+Products end.
+Number of new products of Ikea Inteligentny Dom to upload:  0
+Successfully scrapped Ikea Inteligentny Dom products.
+Page 25(Ikea Inteligentny Dom)
+Products end.
+Number of new products of Ikea Przewody i Ladowarki to upload:  3
+Successfully scrapped Ikea Przewody i Ladowarki products.
+Page 26(Ikea Przewody i Ladowarki)
+Products end.
+Number of new products of Ikea Piekarniki to upload:  0
+Successfully scrapped Ikea Piekarniki products.
+Page 27(Ikea Piekarniki)
+Products end.
+Number of new products of Ikea Plyty Kuchenne to upload:  0
+Successfully scrapped Ikea Plyty Kuchenne products.
+Page 28(Ikea Plyty Kuchenne)
+Products end.
+Number of new products of Ikea Pralki to upload:  0
+Successfully scrapped Ikea Pralki products.
+Page 29(Ikea Pralki)
+Products end.
+Number of new products of Ikea Zmywarki Do Naczyn to upload:  0
+Successfully scrapped Ikea Zmywarki Do Naczyn products.
+Page 30(Ikea Zmywarki Do Naczyn)
+Products end.
+Number of new products of Ikea Okapy Kuchenne i Wyciagi to upload:  0
+Successfully scrapped Ikea Okapy Kuchenne i Wyciagi products.
+Page 31(Ikea Okapy Kuchenne i Wyciagi)
+Products end.
+Number of new products of Ikea Kuchenki Mikrofalowe i Kombi to upload:  0
+Successfully scrapped Ikea Kuchenki Mikrofalowe i Kombi products.
+Page 32(Ikea Kuchenki Mikrofalowe i Kombi)
+Products end.
+Number of new products of Ikea Zarowki LED to upload:  0
+Successfully scrapped Ikea Zarowki LED products.
+Page 33(Ikea Zarowki LED)
+Products end.
+Number of new products of Ikea Lampy to upload:  5
+Successfully scrapped Ikea Lampy products.
+Page 34(Ikea Lampy)
+Products end.
+Number of new products of Ikea Suszarki Na Pranie to upload:  0
+Successfully scrapped Ikea Suszarki Na Pranie products.
+Page 35(Ikea Suszarki Na Pranie)
+Products end.
+Number of new products of Ikea Deski Do Prasowania to upload:  0
+Successfully scrapped Ikea Deski Do Prasowania products.
+Page 36(Ikea Deski Do Prasowania)
+Successfully scrapped Home Concept Doradztwo service.
+Page 0(Home Concept Doradztwo)
+Successfully scrapped Home Concept Pomiar service.
+Page 1(Home Concept Pomiar)
+Successfully scrapped Home Concept Projektowanie service.
+Page 2(Home Concept Projektowanie)
+Successfully scrapped Home Concept Transport service.
+Page 3(Home Concept Transport)
+Successfully scrapped Home Concept Montaz service.
+Page 4(Home Concept Montaz)
+Successfully scrapped Fizia Drzwi Wewnetrzne service.
+Page 0(Fizia Drzwi Wewnetrzne)
+Successfully scrapped Fizia Meble service.
+Page 1(Fizia Meble)
+Successfully scrapped Fizia Schody service.
+Page 2(Fizia Schody)
+Successfully scrapped Fizia Drzwi Specjalne service.
+Page 3(Fizia Drzwi Specjalne)
+Successfully scrapped Fizia Drzwi Zewnetrzne service.
+Page 4(Fizia Drzwi Zewnetrzne)
+Successfully scrapped Home Concept Doradztwo service.
+Page 0(Home Concept Doradztwo)
+Successfully scrapped Home Concept Pomiar service.
+Page 1(Home Concept Pomiar)
+Successfully scrapped Home Concept Projektowanie service.
+Page 2(Home Concept Projektowanie)
+Successfully scrapped Home Concept Transport service.
+Page 3(Home Concept Transport)
+Successfully scrapped Home Concept Montaz service.
+Page 4(Home Concept Montaz)
+Successfully scrapped Projekt W service.
