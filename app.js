@@ -46,47 +46,47 @@ mongoose
       schedule.scheduleJob(updateRule, async () => {
          console.log('Data scraping time: ' + new Date());
 
-         // await asyncForEach(meraPages, async (pageData, index) => {
-         //    await meraScraper(pageData);
-         //    console.log('Page ' + index + '(' + pageData.scrapeID + ')');
-         // });
+         await asyncForEach(meraPages, async (pageData, index) => {
+            await meraScraper(pageData);
+            console.log('Page ' + index + '(' + pageData.scrapeID + ')');
+         });
 
-         // await asyncForEach(ikeaPages, async (pageData, index) => {
-         //    await ikeaScraper(pageData);
-         //    console.log('Page ' + index + '(' + pageData.scrapeID + ')');
-         // });
+         await asyncForEach(ikeaPages, async (pageData, index) => {
+            await ikeaScraper(pageData);
+            console.log('Page ' + index + '(' + pageData.scrapeID + ')');
+         });
 
-         // await asyncForEach(homeConceptPages, async (pageData, index) => {
-         //    await homeConceptScraper(pageData);
-         //    console.log('Page ' + index + '(' + pageData.scrapeID + ')');
-         // });
+         await asyncForEach(homeConceptPages, async (pageData, index) => {
+            await homeConceptScraper(pageData);
+            console.log('Page ' + index + '(' + pageData.scrapeID + ')');
+         });
 
-         // await asyncForEach(fiziaPages, async (pageData, index) => {
-         //    await fiziaScraper(pageData);
-         //    console.log('Page ' + index + '(' + pageData.scrapeID + ')');
-         // });
+         await asyncForEach(fiziaPages, async (pageData, index) => {
+            await fiziaScraper(pageData);
+            console.log('Page ' + index + '(' + pageData.scrapeID + ')');
+         });
 
-         // await projektwScraper(projektW);
+         await projektwScraper(projektW);
 
-         // await buttonScraper(button);
+         await buttonScraper(button);
       });
 
       // REMOVE OUT OF DATED PRODUCTS
       schedule.scheduleJob(removeOODProductsRule, async () => {
          console.log('(Refreshing) Data scraping time: ' + new Date());
 
-         // removeOODProducts();
+         removeOODProducts();
       });
 
       // TESTING
-      (async () => {
-         console.log('(Testing) Data scraping time: ' + new Date());
-         // await ikeaScraper('https://www.ikea.com/pl/pl/cat/stoly-i-stolki-barowe-16244/', 'Ikea Szafki i Witryny');
+      // (async () => {
+      //    console.log('(Testing) Data scraping time: ' + new Date());
+      // await ikeaScraper('https://www.ikea.com/pl/pl/cat/stoly-i-stolki-barowe-16244/', 'Ikea Szafki i Witryny');
 
-         // await removeSpecProducts({uri: /svg/, company: 'mera'});
-         
-         // removeOODProducts();
-      })();
+      // await removeSpecProducts({uri: /svg/, company: 'mera'});
+
+      // removeOODProducts();
+      // })();
 
       app.listen(process.env.PORT || 8101);
    })
