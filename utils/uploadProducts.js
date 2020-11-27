@@ -7,7 +7,7 @@ const { asyncForEach, isEqual, clearImage } = require('./utils');
 module.exports = async (pageData, scrapeID) => {
    let downloadedImages = [];
    try {
-      //Item existance array. 1 = exists, 0 = not exists
+      //Item existence array. 1 = exists, 0 = not exists
       const results = await Promise.all(
          pageData.map((item) =>
             Product.find({
