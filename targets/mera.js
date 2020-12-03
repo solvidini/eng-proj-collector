@@ -23,7 +23,9 @@ const scraper = async (pgData) => {
                   ? document.querySelector(
                        'body > div.p-product-category.p-product-category--bright'
                     ).clientHeight -
-                       (document.querySelector('footer') ? document.querySelector('footer').offsetHeight / 2 : 100)
+                       (document.querySelector('footer')
+                          ? document.querySelector('footer').offsetHeight / 2
+                          : 100)
                   : 0
             );
          });
@@ -58,7 +60,12 @@ const scraper = async (pgData) => {
                   : '';
                const reference = node.querySelector('a') ? node.querySelector('a').href : '';
 
-               if (uri.length > 0 && reference.length > 0 && title.length > 0) {
+               if (
+                  uri.length > 0 &&
+                  reference.length > 0 &&
+                  title.length > 0 &&
+                  !data.some((item) => item.reference === reference)
+               ) {
                   data.push({ title, uri, company, category, description, price, reference });
                }
             });
@@ -74,7 +81,7 @@ const scraper = async (pgData) => {
             description: element.description.replace(/\s\s+/g, ' '),
          };
       });
-      
+
       await uploadProducts(pageData, scrapeID);
       console.log(`Successfully scrapped ${scrapeID} products.`);
       await browser.close();

@@ -87,8 +87,8 @@ mongoose
          // });
 
          // await meraScraper({
-         //    link: 'https://mera.eu/kategorie-produktow/parasole-ogrodowe/',
-         //    scrapeID: 'Mera Parasole Ogrodowe',
+         //    link: 'https://mera.eu/kategorie-produktow/grzejniki/',
+         //    scrapeID: 'Mera Grzejniki',
          // });
 
          // await removeSpecProducts({company: /mera/gi});
