@@ -38,7 +38,7 @@ mongoose
       console.log('Connected to database.');
 
       // SCHEDULE OPTIONS
-      const updateRule = '0 0 2 * * 1,4,6';
+      const updateRule = '0 0 2 * * 1,3,5';
       const removeOODProductsRule = '0 30 4 1 * *';
 
       // *SCRAPERS*
@@ -56,19 +56,19 @@ mongoose
             console.log('Page ' + index + '(' + pageData.scrapeID + ')');
          });
 
-         await asyncForEach(homeConceptPages, async (pageData, index) => {
-            await homeConceptScraper(pageData);
-            console.log('Page ' + index + '(' + pageData.scrapeID + ')');
-         });
+         // await asyncForEach(homeConceptPages, async (pageData, index) => {
+         //    await homeConceptScraper(pageData);
+         //    console.log('Page ' + index + '(' + pageData.scrapeID + ')');
+         // });
 
-         await asyncForEach(fiziaPages, async (pageData, index) => {
-            await fiziaScraper(pageData);
-            console.log('Page ' + index + '(' + pageData.scrapeID + ')');
-         });
+         // await asyncForEach(fiziaPages, async (pageData, index) => {
+         //    await fiziaScraper(pageData);
+         //    console.log('Page ' + index + '(' + pageData.scrapeID + ')');
+         // });
 
-         await projektwScraper(projektW);
+         // await projektwScraper(projektW);
 
-         await buttonScraper(button);
+         // await buttonScraper(button);
       });
 
       // REMOVE OUT OF DATED PRODUCTS
@@ -79,14 +79,20 @@ mongoose
       });
 
       // TESTING
-      // (async () => {
-      //    console.log('(Testing) Data scraping time: ' + new Date());
-      // await ikeaScraper('https://www.ikea.com/pl/pl/cat/stoly-i-stolki-barowe-16244/', 'Ikea Szafki i Witryny');
+      (async () => {
+         console.log('(Testing) Data scraping time: ' + new Date());
+         // await ikeaScraper({
+         //    link: 'https://www.ikea.com/pl/pl/cat/akcesoria-lazienkowe-10555/',
+         //    scrapeID: 'Ikea Akcesoria Lazienkowe',
+         // });
+         // await meraScraper({
+         //    link: 'https://mera.eu/kategorie-produktow/parasole-ogrodowe/',
+         //    scrapeID: 'Mera Parasole Ogrodowe',
+         // });
+         // await removeSpecProducts({uri: /svg/, company: 'mera'});
 
-      // await removeSpecProducts({uri: /svg/, company: 'mera'});
-
-      // removeOODProducts();
-      // })();
+         // removeOODProducts();
+      })();
 
       app.listen(process.env.PORT || 8101);
    })

@@ -23,7 +23,7 @@ const scraper = async (pgData) => {
                   ? document.querySelector(
                        'body > div.p-product-category.p-product-category--bright'
                     ).clientHeight -
-                       document.querySelector('body > footer').offsetHeight / 2
+                       (document.querySelector('footer') ? document.querySelector('footer').offsetHeight / 2 : 100)
                   : 0
             );
          });
@@ -74,7 +74,8 @@ const scraper = async (pgData) => {
             description: element.description.replace(/\s\s+/g, ' '),
          };
       });
-      await uploadProducts(pageData, scrapeID);
+      console.log(pageData);
+      // await uploadProducts(pageData, scrapeID);
       console.log(`Successfully scrapped ${scrapeID} products.`);
       await browser.close();
    } catch (err) {

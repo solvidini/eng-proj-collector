@@ -20,7 +20,7 @@ const scraper = async (pgData) => {
             await page.evaluate(() => {
                document
                   .querySelector(
-                     'body > div.plp-page-container > div > div > div.plp-main-container.plp-main-container > div > div > div.catalog-bottom-container > div.pagination.pagination--center > a'
+                     'body > div.plp-page-container > div > div > div.plp-main-container > div > div > div.catalog-bottom-container > a'
                   )
                   .click();
             });
@@ -55,7 +55,8 @@ const scraper = async (pgData) => {
                   description = description.slice(0, -2);
                   description += ')';
                }
-               let price = node.querySelector('.range-revamp-price').textContent;
+               let price = node.querySelector('.range-revamp-compact-price-package__price-wrapper')
+                  .textContent;
                const uri = node.querySelector('img') ? node.querySelector('img').src : '';
                const reference = node.querySelector('a').href;
 
