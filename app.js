@@ -46,15 +46,15 @@ mongoose
       schedule.scheduleJob(updateRule, async () => {
          console.log('Data scraping time: ' + new Date());
 
-         await asyncForEach(meraPages, async (pageData, index) => {
-            await meraScraper(pageData);
-            console.log('Page ' + index + '(' + pageData.scrapeID + ')');
-         });
+         // await asyncForEach(meraPages, async (pageData, index) => {
+         //    await meraScraper(pageData);
+         //    console.log('Page ' + index + '(' + pageData.scrapeID + ')');
+         // });
 
-         await asyncForEach(ikeaPages, async (pageData, index) => {
-            await ikeaScraper(pageData);
-            console.log('Page ' + index + '(' + pageData.scrapeID + ')');
-         });
+         // await asyncForEach(ikeaPages, async (pageData, index) => {
+         //    await ikeaScraper(pageData);
+         //    console.log('Page ' + index + '(' + pageData.scrapeID + ')');
+         // });
 
          // await asyncForEach(homeConceptPages, async (pageData, index) => {
          //    await homeConceptScraper(pageData);
@@ -82,16 +82,26 @@ mongoose
       (async () => {
          console.log('(Testing) Data scraping time: ' + new Date());
          // await ikeaScraper({
-         //    link: 'https://www.ikea.com/pl/pl/cat/akcesoria-lazienkowe-10555/',
-         //    scrapeID: 'Ikea Akcesoria Lazienkowe',
+         //    link: 'https://www.ikea.com/pl/pl/cat/biblioteczki-i-regaly-st002/',
+         //    scrapeID: 'Ikea Biblioteczki i Regaly',
          // });
+
          // await meraScraper({
          //    link: 'https://mera.eu/kategorie-produktow/parasole-ogrodowe/',
          //    scrapeID: 'Mera Parasole Ogrodowe',
          // });
-         // await removeSpecProducts({uri: /svg/, company: 'mera'});
 
-         // removeOODProducts();
+         // await removeSpecProducts({company: /mera/gi});
+         
+         // await asyncForEach(meraPages, async (pageData, index) => {
+         //    await meraScraper(pageData);
+         //    console.log('Page ' + index + '(' + pageData.scrapeID + ')');
+         // });
+
+         // await asyncForEach(ikeaPages, async (pageData, index) => {
+         //    await ikeaScraper(pageData);
+         //    console.log('Page ' + index + '(' + pageData.scrapeID + ')');
+         // });
       })();
 
       app.listen(process.env.PORT || 8101);

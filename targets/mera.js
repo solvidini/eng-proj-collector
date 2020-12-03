@@ -74,8 +74,8 @@ const scraper = async (pgData) => {
             description: element.description.replace(/\s\s+/g, ' '),
          };
       });
-      console.log(pageData);
-      // await uploadProducts(pageData, scrapeID);
+      
+      await uploadProducts(pageData, scrapeID);
       console.log(`Successfully scrapped ${scrapeID} products.`);
       await browser.close();
    } catch (err) {

@@ -11,7 +11,7 @@ module.exports = async (pageData, scrapeID) => {
       const results = await Promise.all(
          pageData.map((item) =>
             Product.find({
-               $and: [{ scrapeID: scrapeID }, { reference: item.reference }],
+               $and: [{ reference: item.reference }],
             }).countDocuments()
          )
       );
@@ -26,7 +26,7 @@ module.exports = async (pageData, scrapeID) => {
 
       await asyncForEach(updatedData, async (updatedProduct) => {
          const product = await Product.find(
-            { $and: [{ scrapeID: scrapeID }, { reference: updatedProduct.reference }] },
+            { $and: [{ reference: updatedProduct.reference }] },
             {
                _id: 0,
                scrapeID: 1,
