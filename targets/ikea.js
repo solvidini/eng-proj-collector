@@ -3,6 +3,7 @@ const uuid = require('uuid');
 
 const uploadProducts = require('../utils/uploadProducts');
 const errorHandler = require('../utils/errorHandler');
+const pullColor = require('../utils/utils').pullColor;
 
 const scraper = async (pgData) => {
    const { link, scrapeID } = pgData;
@@ -44,17 +45,22 @@ const scraper = async (pgData) => {
                ).textContent;
                const title = node.querySelector('.range-revamp-header-section__title--small')
                   .textContent;
-               let description = node.querySelector('.range-revamp-header-section__description')
-                  .textContent;
-               let additionalDescription = node.querySelectorAll('.plp-color-dots__dot');
-               if (additionalDescription.length > 0) {
-                  description += ' (';
-                  additionalDescription.forEach((color) => {
-                     description += color.ariaLabel + ', ';
-                  });
-                  description = description.slice(0, -2);
-                  description += ')';
-               }
+               let description = node.querySelector(
+                  '.range-revamp-header-section__description-text'
+               ).textContent;
+               let measurements = node.querySelector(
+                  '.range-revamp-header-section__description-measurement'
+               )
+                  ? ' ' +
+                    node.querySelector('.range-revamp-header-section__description-measurement')
+                       .textContent
+                  : '';
+               description += measurements;
+               let variants = node.querySelector('.plp-product-thumbnails')
+                  ? node.querySelector('.plp-product-thumbnails').querySelectorAll('a')
+                  : [];
+               const colors = [];
+               variants.forEach((el) => colors.push(el.href));
                let price = node.querySelector('.range-revamp-compact-price-package__price-wrapper')
                   .textContent;
                const uri = node.querySelector('img') ? node.querySelector('img').src : '';
@@ -69,6 +75,7 @@ const scraper = async (pgData) => {
                      description,
                      price,
                      reference,
+                     colors,
                   });
                }
             });
@@ -77,11 +84,45 @@ const scraper = async (pgData) => {
          })) || [];
 
       pageData = pageData.map((element) => {
+         const { title, uri, company, category, description, price, reference, colors } = element;
+         let newDescription = description.replace(/\s\s+/g, ' ');
+
+         if (colors.length > 0) {
+            let colorsDescription = '';
+            const colorsArray = [];
+
+            colors.forEach((text) => {
+               if (pullColor(text) && !colorsArray.includes(pullColor(text))) {
+                  colorsArray.push(pullColor(text));
+               }
+            });
+
+            colorsArray.forEach((color, index) => {
+               if (index < colorsArray.length - 1) {
+                  colorsDescription += color + ', ';
+               } else {
+                  colorsDescription += color;
+               }
+            });
+
+            if (colorsArray.length) {
+               colorsDescription = ` (${colorsDescription})`;
+               newDescription += colorsDescription;
+            }
+         }
+
+         delete element.color;
+
          return {
-            ...element,
+            title,
+            uri,
+            company,
+            category,
+            description: newDescription,
+            price,
+            reference,
             scrapeID,
             filename: scrapeID.toLocaleLowerCase().replace(/\s+/g, '-') + '-' + uuid.v4(),
-            description: element.description.replace(/\s\s+/g, ' '),
          };
       });
 

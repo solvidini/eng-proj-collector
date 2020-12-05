@@ -93,15 +93,15 @@ mongoose
 
          // await removeSpecProducts({company: /mera/gi});
          
-         // await asyncForEach(meraPages, async (pageData, index) => {
-         //    await meraScraper(pageData);
-         //    console.log('Page ' + index + '(' + pageData.scrapeID + ')');
-         // });
+         await asyncForEach(meraPages, async (pageData, index) => {
+            await meraScraper(pageData);
+            console.log('Page ' + index + '(' + pageData.scrapeID + ')');
+         });
 
-         // await asyncForEach(ikeaPages, async (pageData, index) => {
-         //    await ikeaScraper(pageData);
-         //    console.log('Page ' + index + '(' + pageData.scrapeID + ')');
-         // });
+         await asyncForEach(ikeaPages, async (pageData, index) => {
+            await ikeaScraper(pageData);
+            console.log('Page ' + index + '(' + pageData.scrapeID + ')');
+         });
       })();
 
       app.listen(process.env.PORT || 8101);

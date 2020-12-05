@@ -153,6 +153,10 @@ const ikeaPages = [
 // MERA
 const meraPages = [
    {
+      link: 'https://mera.eu/kategorie-produktow/sofy/',
+      scrapeID: 'Mera Sofy',
+   },
+   {
       link: 'https://mera.eu/kategorie-produktow/plytki-lazienkowe/',
       scrapeID: 'Mera Plytki Lazienkowe',
    },

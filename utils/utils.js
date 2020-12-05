@@ -40,4 +40,28 @@ const isEqual = (a, b) => {
    return true;
 };
 
-module.exports = { clearImage, asyncForEach, isEqual };
+const pullColor = (text) => {
+   if (/czarn/.test(text)) return 'czarny';
+   if (/bial/.test(text)) return 'biały';
+   if (/czerw/.test(text)) return 'czerwony';
+   if (/niebiesk/.test(text)) return 'niebieski';
+   if (/bezow/.test(text)) return 'beżowy';
+   if (/blekit/.test(text)) return 'błękitny';
+   if (/pomarancz/.test(text)) return 'pomarańczowy';
+   if (/rozow/.test(text)) return 'różowy';
+   if (/zlot/.test(text)) return 'złoty';
+   if (/srebr/.test(text)) return 'srebrny';
+   if (/zielon/.test(text)) return 'zielony';
+   if (/purpur/.test(text)) return 'purpurowy';
+   if (/fiolet/.test(text)) return 'fioletowy';
+   if (/karmazyn/.test(text)) return 'karmazynowy';
+   if (/zolt/.test(text)) return 'żółty';
+   if (/braz/.test(text)) return 'brązowy';
+   if (/turkus/.test(text)) return 'turkusowy';
+   if (/kremow/.test(text)) return 'kremowy';
+   if (/bordow/.test(text)) return 'bordowy';
+   if (/szar/.test(text)) return 'szary';
+   return '';
+};
+
+module.exports = { clearImage, asyncForEach, isEqual, pullColor };
