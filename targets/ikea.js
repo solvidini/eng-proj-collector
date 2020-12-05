@@ -67,6 +67,7 @@ const scraper = async (pgData) => {
                const reference = node.querySelector('a').href;
 
                if (uri.length > 0 && !data.some((item) => item.reference === reference)) {
+                  colors.push(uri);
                   data.push({
                      title,
                      uri,

@@ -46,15 +46,15 @@ mongoose
       schedule.scheduleJob(updateRule, async () => {
          console.log('Data scraping time: ' + new Date());
 
-         // await asyncForEach(meraPages, async (pageData, index) => {
-         //    await meraScraper(pageData);
-         //    console.log('Page ' + index + '(' + pageData.scrapeID + ')');
-         // });
+         await asyncForEach(meraPages, async (pageData, index) => {
+            await meraScraper(pageData);
+            console.log('Page ' + index + '(' + pageData.scrapeID + ')');
+         });
 
-         // await asyncForEach(ikeaPages, async (pageData, index) => {
-         //    await ikeaScraper(pageData);
-         //    console.log('Page ' + index + '(' + pageData.scrapeID + ')');
-         // });
+         await asyncForEach(ikeaPages, async (pageData, index) => {
+            await ikeaScraper(pageData);
+            console.log('Page ' + index + '(' + pageData.scrapeID + ')');
+         });
 
          // await asyncForEach(homeConceptPages, async (pageData, index) => {
          //    await homeConceptScraper(pageData);
@@ -91,17 +91,17 @@ mongoose
          //    scrapeID: 'Mera Grzejniki',
          // });
 
-         // await removeSpecProducts({company: /mera/gi});
+         // await removeSpecProducts({company: /ikea/gi});
          
-         await asyncForEach(meraPages, async (pageData, index) => {
-            await meraScraper(pageData);
-            console.log('Page ' + index + '(' + pageData.scrapeID + ')');
-         });
+         // await asyncForEach(meraPages, async (pageData, index) => {
+         //    await meraScraper(pageData);
+         //    console.log('Page ' + index + '(' + pageData.scrapeID + ')');
+         // });
 
-         await asyncForEach(ikeaPages, async (pageData, index) => {
-            await ikeaScraper(pageData);
-            console.log('Page ' + index + '(' + pageData.scrapeID + ')');
-         });
+         // await asyncForEach(ikeaPages, async (pageData, index) => {
+         //    await ikeaScraper(pageData);
+         //    console.log('Page ' + index + '(' + pageData.scrapeID + ')');
+         // });
       })();
 
       app.listen(process.env.PORT || 8101);

@@ -45,6 +45,7 @@ const pullColor = (text) => {
    if (/bial/.test(text)) return 'biały';
    if (/czerw/.test(text)) return 'czerwony';
    if (/niebiesk/.test(text)) return 'niebieski';
+   if (/oliwkow/.test(text)) return 'oliwkowy';
    if (/bezow/.test(text)) return 'beżowy';
    if (/blekit/.test(text)) return 'błękitny';
    if (/pomarancz/.test(text)) return 'pomarańczowy';
@@ -61,6 +62,7 @@ const pullColor = (text) => {
    if (/kremow/.test(text)) return 'kremowy';
    if (/bordow/.test(text)) return 'bordowy';
    if (/szar/.test(text)) return 'szary';
+   if (/przeroczyst/.test(text)) return 'przezroczysty';
    return '';
 };
 
