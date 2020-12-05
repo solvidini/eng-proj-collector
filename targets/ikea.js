@@ -66,7 +66,7 @@ const scraper = async (pgData) => {
                const uri = node.querySelector('img') ? node.querySelector('img').src : '';
                const reference = node.querySelector('a').href;
 
-               if (uri.length > 0) {
+               if (uri.length > 0 && !data.some((item) => item.reference === reference)) {
                   data.push({
                      title,
                      uri,
